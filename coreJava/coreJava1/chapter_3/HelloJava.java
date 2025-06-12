@@ -19,7 +19,10 @@ public class HelloJava {
         for (String arg : args) {
             System.out.println(arg);
         }
-        // 打印Hello Java
+        // 打印Hello Java System(系统)out(输出)println(打印)
+        // out是System类中声明的一个对象,println是out的一个方法
+        // public static final PrintStream out = null;
+        // sout(简化输入，idea会帮你找到system.out.println)
         System.out.println("Hello Java!");
     }
 }
