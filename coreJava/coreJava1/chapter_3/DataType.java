@@ -3,6 +3,9 @@
  */
 
  public class DataType {
+    // 这里不可以var类型是因为final(final 用来声明常量)
+    public static final float PAI = 3.14f;
+
     public static void main(String[] args) {
         // Java是没有unsigned形式的
 
@@ -52,5 +55,32 @@
 
 
         // 至此为止 int short long byte float double char boolean八个基本数据类型介绍完毕
+
+        // 对于变量的命名，什么可以什么不可以就算了，只是我们用字母驼峰命名法就ok了。还有就是Java的变量不要用保留字（如int）作为变量名。
+
+        // 当然，一切的命名都是为了代码的可读性。
+
+        int varNum;
+
+        varNum = 666;
+
+        int varNum2 = 666;
+        
+        System.out.println(varNum + " and " + varNum2);
+
+        var newFeatures = "String";
+
+        System.out.println("this is java 10 new feature : use var " + newFeatures);
+
+        // newFeatures = 777;
+
+        // System.out.println("var can change type. at first is String but can become int");
+
+        System.out.println(PAI);
+
+        System.out.println(Size.LARGE);
+
     }
- }
+ 
+    enum Size{SMALL, MIDDLE, LARGE};
+}
