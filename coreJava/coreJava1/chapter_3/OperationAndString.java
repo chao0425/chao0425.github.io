@@ -49,5 +49,20 @@ public class OperationAndString {
 
         // 这个是condition? a : b;如果condition为真，返回a否则返回b;
         System.out.println(4 > 3? 5 : 6);
+
+        // 位运算 & | ^ ~ >> << >>> 没有<<<，位运算内容较多，并且以前我没学，所以单独讲吧。
+
+        // 对于运算的优先级，只能说挺操蛋。&& 的优先级是高于 ||的其余的嘛，我更多的是用()来清晰的表示运算优先级。Java核心技术卷第11版的44页(机械工业翻译的中文版)贴了一个比较全面的优先级
+
+        // 接下来是Java字符串，Java的字符串不是一个基本类型变量，而是一个对象类。
+        String str = "fuck the java";
+        System.out.println(str);
+        // 发现sub是[)形式的，不包括最后右边的索引
+        String strSub = str.substring(0,7);
+        System.out.println(strSub);
+        // 如果是单索引，那么就是index开始到最后(包含index)
+        System.out.println(str.substring(2));
+        // 对于Java语言的拼接字符串，直接用+显得更简单常用
+        System.out.println(str + " this is simpler C " + 666);
     }
 }
