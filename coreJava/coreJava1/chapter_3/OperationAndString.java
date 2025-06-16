@@ -64,5 +64,57 @@ public class OperationAndString {
         System.out.println(str.substring(2));
         // 对于Java语言的拼接字符串，直接用+显得更简单常用
         System.out.println(str + " this is simpler C " + 666);
+
+
+        // 以第一个为分隔符，当然分割数组也是可以的（刷leetcode可以偷个小懒）
+        System.out.println(String.join(" this is join ", "A", "B", "C"));
+
+        String[] strings = {"one", "two", "three"};
+        System.out.println(String.join(" this is delimiter ", strings));
+        // 重复三遍
+        System.out.println("repeat ".repeat(3));
+
+        // 关于String不可变看源码可以发现    private final byte[] value;这说明value是不可以修改指向的，而也没有提供其中字符的方法，所以长度以及内容都不可以变
+
+        String sStr1 = "String";
+        String sStr2 = "String";
+        String sStr3 = new String("String");
+        String sStr4 = new String("String");
+
+        // 我们分别比较，看一下他们是否相同，就可以发现一些问题了。发现直接引用的字符串是相同的，而直接引用的字符串与new出来的不相同，并且new出来的互相不同。再看equals发现只要内容相同就可以true（这里equals是重写了的）
+        System.out.println(sStr1 == sStr2);
+        System.out.println(sStr1 == sStr3);
+        System.out.println(sStr3 == sStr4);
+        System.out.println(sStr1.equals(sStr3) && sStr3.equals(sStr4));
+
+        // System.out.println("String" == sStr2.substring(0));这个结果有点意外
+
+
+        // 检查String的长度是不是为0
+        String sNull = "test";
+
+        if (!sNull.equals("")) {
+            System.out.println("check sNull\'s length is zero?");
+            sNull = "";
+        }
+
+        if (sNull.length() == 0) {
+            System.out.println("check sNull\'s length is zero?");
+            sNull = null;
+        }
+
+        if (sNull == null || sNull.length() == 0) {
+            // "这个先后顺序很重要，一定是先看是不是null再看是不是长度为0"
+            System.out.println("i can not use chinese. f**k");
+        }
+
+        // charAt();
+        String tryGetCharFromString = "0123456789";
+        for(int i = 0; i < tryGetCharFromString.length(); i++) {
+            System.out.print(tryGetCharFromString.charAt(i) + " ");
+        }
+
+        // 至于码点与代码单元懒得看了，现在是0：31，太困了。感觉没啥意思，就不看了。在我看的这本Java核心技术卷的48页左下角
+
     }
 }
