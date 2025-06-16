@@ -13,5 +13,5 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/chao0425/Internet.git
+git remote add origin https://github.com/用户名/仓库名.git
 git push -u origin main
