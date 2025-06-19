@@ -1,6 +1,5 @@
 import java.io.Console;
 import java.util.*;
-// import java.io.Console;
 
 public class IOAndBlock {
     public static void main(String[] args) {
@@ -25,7 +24,7 @@ public class IOAndBlock {
 
 	// 由于scanner的输入都是可见的，不是很安全对于不可见输入我们有Console类（java.io）
 	Console console = System.console();
-
+	//注意这里不是new，而是System.console():  注意开头小写
 	String username = console.readLine("this is a prompt for user name ");
 	char[] password = console.readPassword("and this is a prompt for password ");
 
