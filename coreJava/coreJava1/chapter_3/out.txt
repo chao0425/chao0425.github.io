@@ -1,0 +1,3 @@
+this is write to a txt
+, and similar to Scanner by file.
+ and don't forget close
