@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 class L2099 {
-    // 感觉是用堆来实现是更合理的，但是简单题简单做吧，刚刚由于电的问题吓死了。
+    // 看了一眼题解，是二维数组，一个维护索引，一个维护值
     // TODO
     public int[] maxSubsequence(int[] nums, int k) {
         
