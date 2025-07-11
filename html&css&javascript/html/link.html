@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引入链接</title>
+</head>
+<body>
+    <h1>我们之前或多或少的使用a标签引入过链接，本节我们再深入的看一下引入链接的方法</h1>
+    <p>
+        对于引入链接的基本操作就是a标签，然后属性名为href值为目标的URL
+        <br/>
+        <strong>默认情况下</strong>，链接将以以下形式出现在浏览器中：
+        一个未访问过的链接显示为蓝色字体并带有下划线。
+        访问过的链接显示为紫色并带有下划线。
+        点击链接时，链接显示为红色并带有下划线。
+    </p>
+    <p>
+        对于a标签的属性，除了我们之前用过的href基础属性外，我们还可以定义链接打开的方式，如<em>是新界面打开还是当前界面打开</em>
+        <br/>
+            使用<strong style="color: red;">target：定义链接的打开方式。</strong>
+                <br><strong>_blank: 在新窗口或新标签页中打开链接。</strong><a href="https://chao0425.github.io/html&css&javascript/" title="多样化的设置跳转链接、这个是_blank、新窗口打开" target="_blank">target的用法，跳转链接再探</a>
+                <br><strong>_self: 在当前窗口或标签页中打开链接（默认）。</strong>
+                <br>_parent: 在父框架中打开链接。<a href="https://chao0425.github.io/html&css&javascript/" title="多样化的设置跳转链接、这个是_parent" target="_parent">target的用法，跳转链接再探</a>
+                <br>_top: 在整个窗口中打开链接，取消任何框架。<a href="https://chao0425.github.io/html&css&javascript/" title="多样化的设置跳转链接、这个是_top" target="_top">target的用法，跳转链接再探</a>
+        <br><strong>老实说，我并没发现除了_blank新窗口打开以外的其余两个与self的区别，都是当前窗口打开</strong>
+    </p>
+    <p>
+        我们接着看rel的用法
+        <br><a href="https://chao0425.github.io/html&css&javascript/" title="多样化的设置跳转链接、这个是新窗口打开。我们来看rel的用法" target="_blank" rel="noopener noreferrer">target的用法，跳转链接再探</a>
+
+        <br><strong>好吧，我没有看到有什么效果。。。</strong>
+    </p>
+    <p>download、id、type css属性怎么回事我没有尝试</p>
+    <p>
+        hreflang: 指定链接的目标URL的语言
+        <br><a href="https://chao0425.github.io/html&css&javascript/" title="多样化的设置跳转链接、这个是新窗口打开。我们来看rel的用法" target="_blank" rel="noopener noreferrer" hreflang="en">target的用法，跳转链接再探</a>        
+    </p>
+</body>
+</html>
