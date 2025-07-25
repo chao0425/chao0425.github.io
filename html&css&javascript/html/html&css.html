@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html中浅谈css</title>
+    <style>
+        b {color: red;font-size: 36px;}
+    </style>
+</head>
+<body style="background-color: #fffaf0;">
+
+    <blockquote>
+        我们对于在html中，对css的引用，可以分为3种：
+        <li>内联样式-在HTML元素中使用"style" 属性</li>
+        <li>内部样式表 -在HTML文档头部head区域使用style元素 来包含CSS</li>
+        <li>外部引用-使用外部CSS文件</li>
+    </blockquote>
+    <strong>无论出于便捷、复用性、可维护哪个角度都是外部css文件更合适</strong>
+
+    <p style="color: gray; margin-left:20px;" title="前面已经简单的写过特别基础的css了">
+        对于最简单的css就是，在标签里面给一个style属性就好了。
+        <br>
+        这个作用域为整个整个标签，还可以设置举例边框多少个宽度（px为单位）如：margin-left:20px
+    </p>
+
+    <p style="color: white; background-color: rgb(145, 144, 144);" title="刚刚的color是设置的字体颜色，我们还可以对背景设置颜色 background-color: ;">
+        看看这个背景颜色怎么样
+        <br>占一占位置
+        <br>让这个背景颜色宽一点
+        <br>可以更明显的看到效果
+    </p>
+    <p style="font-size: 36px; color: gray;" title="注意font-size的单位是px或者一些其他的，总之，不要忘记单位。">
+        font-family是字体，font-size是大小，color是颜色
+        <br>
+        注意font-size的单位是px或者一些其他的，总之，不要忘记单位。
+    </p>
+
+    <p style="text-align: center;">
+        style="text-align: center;"是文本居中<br>
+        如果对标题居中就比较美观了。<br>
+    </p>
+    <p style="text-align: right;">
+        style="text-align: right;"<br>
+        啊哈哈，这个就是右对齐了
+    </p>
+    <strong style="font-size: 24px; color: gray;">对于b标签这种，搞一个style让他右对齐是无效的，但是可以调节字体大小以及颜色哈哈哈</strong>
+
+    <p>
+        本文结束前，最后一个玩法就是，在head部分可以写一个style标签，然后style标签的内容则是"具体的某个标签:对应渲染效果"，如:b {color: red;font-size: 36px;},<b style="font-size: 18px;">那么这个效果就是对全局有效了，所以希望他失效就要指定特定的情况了</b>
+        <br>我们接下来尝试一下
+        <br><b title="b标签">试一下对于文件的css渲染</b>
+    </p>
+
+    <b>最后就是引入一个其他的html，对于html的css，我们这个html里面写了单独对标签使用，以及head里面写一个style，接下来引用一个html是外部引入的css<a href="./html&css_2.html" target="_blank">html&css_2</a></b>
+    
+</body>
+</html>

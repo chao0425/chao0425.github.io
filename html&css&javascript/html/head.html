@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>head title</title>
     <base href="https://chao0425.github.io/html&css&javascript/" target="_blank">
 </head>
 <body>
@@ -13,11 +13,13 @@
         对于head部分的title与我们之前说的title不太一样，这个是定义了浏览器工具栏的标题、而不是悬浮时候的显示。而且这个标题显示在搜索引擎结果页面。
     </p>
     <p>
-        <strong>对于base我们应该放到html的head部分，并且只可以有一个base，在这个base种可以指定href、target等。后续引入链接时候href就可以使用一base的herf为基准的相对路径（如果是相对路径就是默认相对base的，毕竟base只有一个）、对于target也是默认使用base的</strong>
+        <strong>对于base我们应该放到html的head部分，并且只可以有一个base，在这个base种可以指定href、target等。后续引入链接时候href就可以使用以base的herf为基准的相对路径（如果是相对路径就是默认相对base的，毕竟base只有一个）、对于target也是默认使用base的</strong>
         <br>
-        <a href="html/tags.html">以base为基准使用相对路径，并且使用base的target</a>
+        <a href="html/tags.html" title="href属性为html/tags.html，base的href为https://chao0425.github.io/html&css&javascript/">以base为基准使用相对路径，并且使用base的target</a>
         <br>
-        <a href="https://chao0425.github.io/html&css&javascript/html/linkAndImage.html" target="_self">脱离base使用绝对路径，并且选择自己指定target</a>
+        <a href="https://chao0425.github.io/html&css&javascript/html/linkAndImage.html" title="href为https://chao0425.github.io/html&css&javascript/html/linkAndImage.html" target="_self">脱离base使用绝对路径，并且选择自己指定target</a>
     </p>
+    <p><strong>对于link标签，link标签定义了文档与外部资源之间的关系。至于具体怎么用，到学习css时候具体再说。至于style标签的具体使用，我们也是到css时候再谈吧</strong></p>
+    <p>meta怎么用还是有时间再说哈哈哈。不过，他不是展示给用户的。script写head是引入js脚本</p>
 </body>
 </html>

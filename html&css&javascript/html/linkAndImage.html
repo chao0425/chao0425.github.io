@@ -13,9 +13,13 @@
         <br>当然，我们也可以引入一些图片，格式如：&lt;img src="项目的相对路径或者绝对路径" alt="当图像无法显示时显示这段文本" width="宽度" height="高度"/（这个斜杠没有也没啥毛病）&gt;
         <br><img src="../image/justImage.jpg" alt="该图片暂时丢失啦" style="color: red;" width="225" height="300"/>
         <br>
-        <video width="225" height="300" controls>
-            <source src="../video/中指mp4.mp4" type="video/mp4">
+        对于video的话，则是video标签，然后属性填写长宽。以及controls按钮。具体的内容则是source标签，填写src源文件以及type文件类型
+        <br>
+        <video width="225" height="300" controls title="title标签以及video标签的使用，video标签要有controls才有控制按钮。video标签内容为source标签元素">
+            <source src="../video/中指mp4.mp4" type="video/mp4" title="这个source的titile可以干什么？？？？">
         </video>
+        <br>
+        我不明白source标签的title有什么用，还有就是我发现视频没有找到alt的功能
     </p>
 </body>
 </html>

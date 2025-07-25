@@ -1,0 +1,19 @@
+/* 这个是学习html如何引入css时候的初步示例*/
+body {
+    background-color: #fffaf0;
+    font-size: 24px;
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+h6 {
+    text-align: center;
+}
+
+b {
+    color: red;
+}
