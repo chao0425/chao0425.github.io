@@ -12,8 +12,66 @@
 </head>
 <body>
     表格是由table标签来定义的<br>
-    <table>
-        
+    table标签里面内嵌thead以及tbody，就是head头部以及body内容主体部分。<br>
+    无论是在head还是body我们都是需要用tr来定义行，表示一行。是表示一行，一行里面有多少列是tr内部里面说的。<br>
+    在tr里面我们继续th以及td。th是头部的，head嘛。对于td是data的。
+    <table style="color: gray; border-color: red;border-collapse: collapse;" border="1">
+        <thead>
+            <tr>
+                <th>
+                    第1列的th
+                </th>
+                <th>
+                    第2列的th
+                </th>
+                <th>
+                    第3行的th
+                </th>
+            </tr>
+        </thead>    
+        <tbody>
+            <tr>
+                <td>
+                    data的第1列
+                </td>
+                <td>
+                    data的第2列
+                </td>
+                <td>
+                    data的第3列
+                </td>
+            </tr>
+        </tbody>
     </table>
+
+    <br>
+
+    基本流程是：<br>
+    table<br><br>
+    thead<br>
+    tr<br>
+    thth<br>
+    thth<br>
+    thth<br>
+    tr<br>
+    thead<br>
+    这个是一行三列<br><br>
+    tbody<br>
+    tr<br>
+    tdtd<br>
+    tdtd<br>
+    tdtd<br>
+    tr<br>
+    tr<br>
+    tdtd<br>
+    tdtd<br>
+    tdtd<br>
+    tr<br>
+    tbody<br>    
+    这样的话是两行三列<br>
+    table<br><br>
+    <b>这个表格是没有边框线的，第一行的标题行是加宽加黑的</b>
+    <br>
+    <b style="color: red;">如果是希望有边框，可以额外说：border="1"，至于里面的数字，数字越大，边框越宽。对于边框的颜色，在css里面设置border-color就可以了。border-collapse: collapse;可以将边框线设置为单实线，比较舒服。</b>
 </body>
 </html>
