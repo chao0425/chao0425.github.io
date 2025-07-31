@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form表单</title>
+    <style>
+        body {
+            background-color:#fffaf0
+        }
+    </style>
+</head>
+<body>
+    HTML 表单通常包含各种输入字段(输入框)、复选框(多选)、单选按钮(单选)、下拉列表等元素(下拉选择)。
+    <br>
+
+    <form action="">
+        <!-- 文本输入框 -->
+        <label for="name">单击我输入:</label>
+        <input type="text" id="name" name="name" value="这个是默认的输入值..." required>
+        <br>
+        <label for="password">thisIsPassword</label>
+        <input type="password" id="password" name="password" value="123456" required>
+        <br>
+        <!--来看看单选按钮怎么玩儿-->
+        <label>这个是单选按钮</label>
+        <!--没有for，只是一个识别用的label-->
+        <label for="male">男</label>
+        <input type="radio" id="male" name="sex" value="male" checked>
+        <label for="famale">女</label>
+        <input type="radio" id="famale" name="sex" value="famale">
+        <br>
+        
+        <label for="打游戏">打游戏</label>
+        <input type="checkbox" id="打游戏" name="hobby" value="game">
+        <label for="看电影">看电影</label>
+        <input type="checkbox" id="看电影" name="hobby"  value="movie">
+        <label for="读书">读书</label>
+        <input type="checkbox" id="读书" name="hobby"  value="read">
+        <label for="吹水">吹水</label>
+        <input type="checkbox" id="吹水" name="hobby"  value="chat">
+        
+        <br>
+            <!-- 下拉列表 -->
+        <label for="select">爱好:</label>
+        <select id="select" name="hobby">
+        <option value="eat">吃</option>
+        <option value="game">游戏</option>
+        </select>
+
+        <br>
+
+        <label for="sex_">性别</label>
+        <select name="sex_" id="sex_">
+            <option value="0">女</option>
+            <option value="1">男</option>
+        </select>
+
+        <br>
+    </form>
+    <p>
+        我们首先使用form标签来创建一个表单，然后再在这个表单里面进行具体操作。(这个表单相当于调查问卷，只是一张纸，而问卷具体内容选项是我们在表单中写的)<br>
+        接下来是对label的解释：for=""这个for内容与id是强相关的。假设id为xxx的输入框，我们for="xxx".单击这个label，则会直接可以开始输入了。<br>
+        然后就是input：<br>
+        input的<strong style="color: red;">type</strong>是指定输入类型，如果是text就是正常文本，如果是password则是密码形式。（默认不可见）。<br>
+        <strong style="color: red;">id</strong>则是结合前面的for，以及css、js等合作的。<br>
+        <strong style="color: red;">name</strong>则是提交的名字。以一个什么样的名字提交表单。这个名字也是用来指定在哪些范围内的单选按钮、多选按钮的<br>
+        <strong style="color: red;">required</strong>则表明这个是一个必选项。<br>
+        <strong style="color: red;">checked</strong>代表的是默认填写的内容<br>
+        对于我们input的<strong style="color: red;">value</strong>选项，则是上交表单后，他们识别到的结果。
+        <br>
+        单选是<strong style="color: red">radio</strong>、多选使用的是<strong style="color: red;">checkbox</strong>。
+        <br>
+        对于下拉选项我们使用的是<strong style="color: red;">select</strong>,具体选项内容我们使用<strong style="color: red;">option</strong>
+        <br>
+        <strong style="font-size: 24px;">对于具体的表单玩儿法，可以看看本文的源码</strong>
+    </p>
+    <p>
+        对于form的action是指定交给谁处理（这里我没有学到，因为他不单单是html的事情了）<br>
+        而method则是指定了上交的方式是get还是post（具体不清楚，如何作用也不清楚，这不单单是html的内容）<br>
+        对于input的type设置为submit则是提交这个表单
+    </p>
+    对于表单的更多提交操作等其他操作，以后再进行补充。
+</body>
+</html>
