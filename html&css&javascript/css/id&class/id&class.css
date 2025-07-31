@@ -1,0 +1,16 @@
+#testId
+{
+    color: gray;
+    font-size: 20px;
+    background-color: #fffaf0;
+}
+
+.center {
+    color: gray;
+    background-color: #fffaf0;
+    text-align: center;
+}
+
+b.center {
+    color: red;
+}

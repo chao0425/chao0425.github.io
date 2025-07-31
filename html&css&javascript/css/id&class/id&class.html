@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id&class</title>
+    <link rel="stylesheet" href="id&class.css">
+</head>
+<body>
+    <h1>对于id我们对css的定义是使用#name来操作的，注意id的名字不要使用数字开头</h1>
+    <p id="testId" class="center">还是同样的css，我们不指定标签的名字，而是#id的名字。照常引入css文件，只不过使用的时候，对于标签给一个id属性，id属性的值则是我们css里面写的id的值</p>
+    
+    <p class="center">对于类选择器，我们可以使用.类名，然后给出这个类的属性，如背景颜色，居中等<br>
+    我们还可以指定专门的某个标签可以使用的类，即b.类名<br>
+    这样就是对b标签使用这个的类生效<b class="center">这样对b专门生效</b><strong class="center">strong则不会有这个效果</strong></p>
+
+    <p>
+        对于id以及类，都可以有一些不错的效果。不过还是要简单唠唠他们的不同。<br>
+        首先是一个html中id应该是唯一的，即使我们可能写两个同样的id使用，不过这是不符合规范的。也有可能会影响js脚本的操作<br>
+        其次是如果对于同一个标签，id与class设置冲突，以id优先<br>
+        id是#id，类是.类名|标签.类名
+    </p>
+
+</body>
+</html>
