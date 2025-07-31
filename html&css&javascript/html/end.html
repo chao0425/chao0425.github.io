@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最后的html</title>
+</head>
+<body style="background-color: #fffaf0;">
+    <p style="font-size: 16px">前面的内容基本涵盖了我需要了解的大多数内容，接下来只是就其余的杂七杂八的部分来简单聊一聊。</p>
+    <div id="iframe">
+        iframe可在当前html里面展示其他的url界面。如下：<br>
+        <iframe src="index.html" frameborder="0" width="400px"></iframe>
+        <br>这个iframe的src则是界面，frameborder则是选择是否展示边框。当然还可以设置长宽。
+        <br>
+        <br>
+        我们可以对于iframe给一个名字，这样的话，让其他a标签的target改为这个名字，就可以让这个iframe展示为a标签的url结果了
+        <br>
+        <iframe src="index.html" frameborder="0" name="iframe_a"></iframe>
+        <p>
+            <a href="firstHtml.html" target="iframe_a" rel="noopener">点我切换上面的嵌入为firstHeml</a>
+            <!--这个rel在讲述a标签、链接那里有，不过我弄得不是很明白，主要是没看到效果-->
+        </p>
+    </div>
+    <div style="background-color: #c0c0c0;">
+        对于颜色，可以用英文的颜色，如：red，也可以是rgb(144,0,0)形式，或者#A00000。这是三种表示，没啥说的。
+    </div>
+
+    <div>
+        html可以嵌入脚本，具体如何操作学了脚本再说。
+    </div>
+
+    <div>
+        <a href="https://www.runoob.com/html/html-entities.html">这个是菜鸟教程的链接</a>
+        <br>就是一些符号如何展示出来，比如我希望html渲染结果为小于号，可是直接输入小于号不展示。这个链接就给了一些解决的方法。
+    </div>
+    
+    <div>
+        后面就没啥有意思的内容了。<br>
+        接下来就是学习css以及js。<br>
+        没啥说的了。end
+    </div>
+
+    <div style="background-color: #c0c0c0;">end_2025/7/31</div>
+</body>
+</html>
