@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table_01</title>
+    <style>
+        body {
+            background-color: #fffaf0;
+        }
+    </style>
+</head>
+<body>
+    <table style="border-collapse: collapse; border-color: gray;" border="1">
+        <thead>
+            <tr>
+                <th>第1列</th>
+                <th>第2列</th>
+                <th>第3列</th>
+                <th>第4列</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>第1列</td>
+                <td>第2列</td>
+                <td>第3列</td>
+                <td rowspan="3" style="background-color: gray; color: red;">这个占三行</td>
+            </tr>
+            <tr>
+                <td>第1列</td>
+                <td>第2列</td>
+                <td>第3列</td>
+            </tr>
+            <tr>
+                <td>第1列</td>
+                <td>第2列</td>
+                <td>第3列</td>                
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

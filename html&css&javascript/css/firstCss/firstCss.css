@@ -1,0 +1,14 @@
+body {
+    background-color:#fffaf0;
+    /*这个是css的注释，颜色依旧是咱们的：#fffaf0*/
+}
+h1 {
+    /*标题是居中的灰色*/
+    color:gray;
+    text-align:center;
+}
+p {
+    /*对于段落的内容，咱们使用的是20px字体大小，注意不要忘记写px。font-family就是指定一个字体*/
+    font-family:"Times New Roman";
+    font-size:20px;
+}
