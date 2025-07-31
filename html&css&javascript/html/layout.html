@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局</title>
+</head>
+<body style="background-color: #fffaf0;">
+    <div id="container" style="width:500px">
+
+    <div id="header" style="background-color:#FFA500;">
+    <h1 style="margin-bottom:0;">主要的网页标题</h1>
+    <!--这个id暂时用不到，叫做header主要是识别一下是头部-->
+    </div>
+
+    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float: left;">
+    <b>加宽</b><br>
+    换行后的内容<br>
+    内容补充<br>
+    占地方用
+    <!--同样的、只不过这个是加上了这个块儿的宽度与高度。对于float，则是确定这个块儿是靠左悬浮还是靠右悬浮-->
+    <!--ps：到了块儿的极限宽度时候，我们的内容会折行。可是超出高度后，我们会发现结果是越出这个块儿了(不过还是折行)-->
+    </div>
+
+    <div id="content" style="background-color:#EEEEEE;height:200px;width:400px; float: left;">
+        这部分则是内容了，对于id、style的解读，与上面的注释里面的解读是一样的效果。至于float则是挨着前面的float悬浮。
+    </div>
+
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center; font-size: 12px;">
+    这个clear:both就是清楚前面的float效果。还有就是文字居中显示
+    <!--这个clear:both就是清楚前面的float效果。还有就是文字居中显示-->
+    </div>
+
+    </div>
+    
+    <b style="color: gray; font-size: 22px;">我们发现div的块儿是可以嵌套块儿的。外层的块儿定义一个长宽出来（或者只定义长，亦或者只定义宽都可以）那么内部的块则以外部块儿的长宽为基准了</b>
+    <br><b>至于布局时候用的float属于css部分的内容，即浮动。可以使得块在一排展示（默认的换行的，float则不换行，相当于浮在上空）。具体效果可以尝试去掉，加回来等来对比看效果。</b>
+    <br><b>如果希望前面有float效果，后续没有，则可以用一个div里面的css写clear:both;就好了。</b><br>
+
+    至于具体的注释，我就不再贴出来了，直接看源码里面的注释吧。本内容的布局更倾向是对css的理解，反而不是纯html的内容了。
+
+    <br>
+
+    在最后，我们想说除了div的布局外，我们还可以使用table来实现布局的效果，具体就不展示了。可以去看看<span style="color: gray;">菜鸟教程</span>的效果展示。
+
+</body>
+</html>
