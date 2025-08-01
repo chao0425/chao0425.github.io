@@ -1,0 +1,26 @@
+body {
+    background-color: #fffaf0;
+    color: gray;
+    font-size: 20px;
+}
+p {
+    text-align: left;
+}
+.overLine {
+    text-decoration: overline;
+}
+.lineThrough {
+    text-decoration: line-through;
+}
+.underLine {
+    text-decoration: underline;
+}
+.uppercase {
+    text-transform:uppercase;
+}
+.capitalize {
+    text-transform:capitalize;
+}
+.indent {
+    text-indent:20px;
+}
