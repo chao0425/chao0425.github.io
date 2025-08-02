@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link链接</title>
+    <style>
+        body {
+            background-color: #fffaf0;
+            color: gray;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        a:link {color:#000000;}      /* 未访问链接*/
+        a:visited {color:#00FF00;}  /* 已访问链接 */
+        
+        a:hover {color:#FF00FF; text-decoration: none;}  /* 鼠标移动到链接上 */
+        a:active {color:#0000FF; text-decoration: line-through;}  /* 鼠标点击时 */
+
+    </style>
+</head>
+<body>
+    <h1>由于本节内容不多，比较简单，就不单独写css了，css直接就内部css了</h1>
+    <a href="../index.html">返回css的目录页</a><br>
+    a:hover 必须跟在 a:link 和 a:visited后面<br>
+    a:active 必须跟在 a:hover后面<br>
+    link(未访问)、visited(已访问)、hover(光标悬停时候)、active(点击时刻)<br>这个顺序也是比较好记的。<br>
+    我们还可以设置text-decoration来搞下划线，none就是没有线，line-through是线穿过文字。配合着vscode的代码提示也不难。
+</body>
+</html>
