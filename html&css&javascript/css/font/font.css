@@ -1,0 +1,26 @@
+body {
+    background-color: #fffaf0;
+    color: gray;
+    font-size: 20px;
+
+}
+
+h1 {
+    color: black;
+    font-weight: bolder;
+    font-size: 26px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+p.style {
+    font-style: italic;
+}
+
+.sizeA {
+    font-size: 24px;
+}
+
+.sizeB {
+    font-size: 1.5em;
+}
