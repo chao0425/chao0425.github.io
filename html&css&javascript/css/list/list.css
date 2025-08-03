@@ -1,0 +1,40 @@
+body {
+    background-color: #fffaf0;
+    font-size: 18px;
+    color: gray;
+}
+h1 {
+    text-align: center;
+}
+
+ul.a {
+    list-style-type:circle;
+}
+
+ul.b {
+    list-style-type:square;
+}
+
+ol.a {
+    list-style-type:upper-roman;
+}
+
+ol.b {
+    list-style-type:lower-alpha;
+}
+
+ul.c
+{
+    color: black;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+ul.c li
+{
+    background-image: url(../../image/css背景.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 14px; 
+}
