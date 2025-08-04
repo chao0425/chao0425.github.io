@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table表格</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <h1>简单的描述下对表格的操作，如边框，宽度等</h1>
+    <p>先拿一个table来举例子吧</p>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>第1行第1列</th>
+                    <th>第1行第2列</th>
+                    <th>第1行第3列</th>
+                    <th>第1行第4列</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>第2行第1列</td>
+                    <td>第2行第2列</td>
+                    <td>第2行第3列</td>
+                    <td>第2行第4列</td>
+                </tr>
+
+                <tr>
+                    <td>第3行第1列</td>
+                    <td>第3行第2列</td>
+                    <td>第3行第3列</td>
+                    <td>第3行第4列</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        我们可以给table, th, td {border: 1px solid black;}这样一起设置css属性。<br>
+        1px是边框线为1px，solid是表示有边框线？(没了solid边框线就没了)，black是边框线颜色<br>
+        border-collapse:collapse;这个属性则是使得表格的线粘合在一起，并非出现一个个的框框(自己写个表格，有这个属性，没有这个属性分别玩一下就好了)<br>
+        对于调整宽度，调整table的就可以，至于希望调整高度，则是对th、td下手<br>
+        当然，我们对于th、td也是可以设置对齐方式的，就是我们之前用的text-align: center;<br>
+        vertical-align:bottom;上面我们说了如何左右的居中对齐，这个参数这是上下的对齐，可以决定是中间，靠近上框线还是靠近下框线。<br>
+        padding则是可以决定靠近上框线/下框线多少的一个设定，单位是px(这个操作带来了类似height的效果)，但是他却使得vertical-align失效了。<br>
+        
+    </div>
+</body>
+</html>

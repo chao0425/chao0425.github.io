@@ -1,0 +1,31 @@
+body {
+    color: gray;
+    background-color: #fffaf0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 26px;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+table {
+    /* background-color: green; */
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    color: black;
+    background-color: gray;
+}
+td {
+    /* background-color: gray; */
+    /* height: 100px; */
+    text-align: center;
+    vertical-align:top;
+    padding: 30px;
+}
