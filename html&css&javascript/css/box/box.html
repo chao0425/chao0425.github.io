@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <link rel="stylesheet" href="box.css">
+</head>
+<body>
+    <h1 style="margin: 0px;">盒子模型</h1>
+    <div style="margin: 0px; background-color: white;">
+        <p style="margin: 0px;">
+            Margin(外边距):清除边框外的区域，外边距是<strong>透明的</strong>。与其他区域分隔的宽度。  <br>
+            Border(边框):围绕在内边距和内容外的边框。整个边框。  <br>
+            Padding(内边距):清除内容周围的区域，内边距是<strong>透明的</strong>。这个是用来占空间的。  <br>
+            Content(内容):盒子的内容，显示文本和图像。即具体的内容。<br>  
+        </p>
+    </div>
+    <div style="margin: 25px;">
+        刚刚简单的展示了一下margin为0px的情况，可以看到两个颜色的背景是无色衔接的。（div的margin好像默认是0，不过p好像是有margin的）
+    </div>
+
+    <div>
+        <p>
+            我们设置width以及height时候，只是设置的内容的高度以及宽度，至于margin，padding以及border的宽度都是要自己设置的。
+        </p>
+    </div>
+    <span style="margin: 0px; padding: 0px; border: 0px; background-color: white; color: black;">最后，我们再举一个例子，多用一下盒子模型</span>
+    <div style="margin: 50px; border: 15px solid black; padding: 10px;">
+        <p style="margin: 0px;">
+            ok，在浏览器按f12，然后看元素(element在代码哪里，光标就可以展示了，我觉得这段盒子模型展示的还挺不错的)
+        </p>
+    </div>
+</body>
+</html>
