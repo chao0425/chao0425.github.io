@@ -1,0 +1,23 @@
+body {
+    background-color: #fffaf0;
+    font-size: 20px;
+    color: gray;
+}
+
+h1 {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    text-align: center;
+    color: black;
+}
+
+.displayNone {
+    display: none;
+}
+
+.visibilityHidden {
+    visibility: hidden;
+}

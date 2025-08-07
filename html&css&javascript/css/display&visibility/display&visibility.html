@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display&visibility展示与可见性</title>
+    <link rel="stylesheet" href="display&visibility.css">
+</head>
+<body>
+    <h1>简单来聊一聊展示(display)与可见性(visibility)</h1>
+    <div class="displayNone">
+        <p>
+            这样是就看不到了吗？？？<br>
+            好神奇。。。<br>
+            可是看不见，也不占地方写出来做什么？？？<br>
+            如果是注释当然直接用注释语法更好了啊？？？<br>
+            不能理解。
+        </p>
+    </div>
+    <div>
+        <p>上面我写了1个div的一点内容，使用了display的none<br>接下来再用一个visibility的hidden</p>
+    </div>
+    <div class="visibilityHidden">
+        <p>
+            如果是这段好像也是不展示的？？？<br>
+            那么我想知道：<br>
+            他是否会占用空间？？？<br>
+            如果占用空间的话，下面的话则显得空旷起来。<br>
+            我要进行尝试了。<br>
+            ok
+        </p>
+    </div>
+    <div>
+        如果这段话的周围是比较空旷的，则是占用空间但不展示。
+    </div>
+    <div>
+        <strong>
+.displayNone {<br>
+    display: none;<br>
+}<br>
+<br>
+.visibilityHidden {<br>
+    visibility: hidden;<br>
+}<br>
+        </strong>
+        <p>根据这段代码以及我们的效果展示来看，使用display的none话，就像消失了，不占地方也不展示，而对于visibility的hidden则不展示，但是占地方。</p>
+    </div>
+
+
+    <div style="margin-bottom: 300px;">
+        <p>
+            对于display的用法远不止于此。举两个例子。
+            <span style="display: block;">这样的话，他就是独立的一行了。</span>我这里是使用span配合display: block;没有使用br得到的结果，也是换行效果。即block元素的前后都是默认有br换行的。
+            <br>
+
+            <p style="display: inline;">然后就试一下p标签的display:inline</p>            
+            <p style="display: inline;">能不能就是作为一行来操作。</p>
+            结果是显然的，两个p粘合在一起了，前后没有换行符。
+        </p>
+    </div>
+</body>
+</html>
