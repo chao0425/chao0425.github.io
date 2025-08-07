@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动float</title>
+    <link rel="stylesheet" href="float.css">
+</head>
+<body>
+    <h1>简单来说说浮动，这个在html的布局那里提及过</h1>
+    <blockquote><a href="../../html/layout.html">html那里遇到的浮动</a></blockquote>
+
+    <div style="border: 1px solid black;">
+        Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。<br>
+        其核心想法就是不希望文字被图片、块儿所遮挡，而是可以使文字重排列。<br>
+        float可以使得左右、上下浮动。而clear:both;则可以结束浮动，接下来的内容不受浮动的影响了。<br>
+        下面是浮动的简单例子，也比较简单。
+    </div>
+
+    <div style="width: 500px; height: 300px; background-color: aqua;">
+        <div style="width: 100px; float: left;">
+            this is first div
+        </div>
+
+        <div style="width: 100px; background-color: green; height: 100px;">
+            this is second div
+        </div>
+        
+        <div style="clear: both;"></div>
+
+        <div style="width: 100px; background-color: black; height: 100px;">
+            and third div
+        </div>
+    </div>
+</body>
+</html>
