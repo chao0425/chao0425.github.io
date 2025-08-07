@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>零碎知识——第1讲</title>
+    <link rel="stylesheet" href="scraps_1.css">
+</head>
+<body>
+    <h1>讲解一些类选择器、尺寸什么的</h1>
+    <div>
+        <p>
+            h1, strong {<br>
+                color: black;<br>
+            }<br>
+            这样的话就是对于strong、h1标签都设置一个颜色就是black，而不用分开写，不大会影响可读性，而且还减少了代码量（不过面临的问题就是，如果分开写，那么h1的所有属性都在里面，而不用去找多个）<br> 
+        </p>
+
+        <p><strong>对于css的写法可以有如下几种例子(没涉及id)</strong><br>
+p{ }: 为所有 p 元素指定一个样式。这个是对所有p都生效的<br>
+.marked{ }: 为所有 class="marked" 的元素指定一个样式。这个是对指定了class为marked生效的<br>
+.marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。这个可能是div是marked的，而只对指定这个类的div内部的p生效，对于其他的不生效<br>
+p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。这个只对p指定了这个类生效的css<br>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            尺寸我没什么想说的，我个人习惯使用px罢了。简单易懂。
+        </p>
+    </div>
+</body>
+</html>

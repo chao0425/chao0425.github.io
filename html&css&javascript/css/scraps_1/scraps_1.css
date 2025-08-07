@@ -1,0 +1,12 @@
+body {
+    color: gray;
+    background-color: #fffaf0;
+    font-size: 20px;
+}
+
+h1, strong {
+    color: black;
+}
+h1 {
+    text-align: center;
+}
