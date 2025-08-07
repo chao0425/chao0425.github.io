@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position定位</title>
+    <link rel="stylesheet" href="position.css">
+</head>
+<body>
+    <h1>来聊一聊position定位</h1>
+    <hr>
+
+    <div class="square" style="position: absolute; left: 170px; top: 30px; background-color: aqua;">
+        position: absolute;<br>
+        这个位置是对于界面的绝对位置，可以造成覆盖的效。其余的div可以占有这个原来的位置。
+    </div>
+    <div class="square" style="position: static; background-color: white;">
+        position: static; 是默认情况。
+    </div>
+
+    <div>
+        第一种情况是使用position: absolute;与position: static;对于absolute是绝对的位置，而对于static是默认的。<br>
+        absolute释放原有的位置。<br>
+        <strong>static定位的元素不会受到top,bottom,left,right影响。</strong>
+    </div>
+
+    <hr>
+
+    <div class="square" style="position: relative; top: 50px; left: 30px; background-color: aqua;">
+        <p>这里的话则是position为relative了，这个top、left都是相对这个div原本的位置的。</p>
+    </div>
+    <div class="square" style="background-color: black;">
+    </div>
+
+    <div>
+        <p>
+            我们发现这个position为relative的话，不会释放原有的空间。
+        </p>
+    </div>
+    <hr>
+    我们继续
+    <div class="square" style="position: fixed; left: 900px; top: 20px; color:aqua;">
+        <p>
+            来看看这个，我们发现是相对于整个窗口界面的位置，并且，他是悬浮的。无论上下滑动与否，他都是固定在那里的。
+        </p>
+    </div>
+    <div style="border: 1px solid black; height: 230px; width: 300px; position: absolute; left: 200px;
+    ">
+        <p>如果这个不设置top/left等，则会放在其应有的位置，一旦设置了，则会相对于html的界面固定住。类似于absolute的正常效果了。<br>当然，我这里没有解释明白，但是我自己已经理解了，就是写两次玩玩就好了。</p>
+    </div>
+    <div class="square" style="background-color: white;">
+        <p>
+            好的，这是普通的一个div，使用的是默认的定位。
+            <br>
+        </p>
+    </div>
+
+    <hr>
+    <div>
+        <p>简单总结一下，就是position常见的有四种，分别介绍一下<br>
+            1.static，这个就是默认的位置，不受top/left等影响，就是本该有的正常位置。<br>
+            2.absolute，这个是绝对位置，相对于html界面来说，固定的位置，他会释放其原有占用的位置。<br>
+            3.relative，相对其正常的位置，即相对static的位置，不释放原有空间。<br>
+            4.fixed，相对界面窗口的，释放空间，滚动窗口的话它也不会移动：
+        </p>
+    </div>
+    <hr>
+    <div class="square" style="position: sticky; top: 10px; left: 30px;">
+        <p style="margin: 0px; padding: 0px;">
+            如果是position: sticky;的话，则是relative与fixed的动态关系<br>
+            能relative则relative，不然就是fixed。
+        </p>
+    </div>
+
+    <div>
+        <strong>最后要说的是，如果我们使用定位有可能会发生重叠(如广告覆盖内容)，那么我们如何做到呢：即使用z-index:-1(某个数字);具有更高堆叠顺序的元素总是在较低的堆叠顺序元素的前面。就不实操了。太困了要睡觉了。</strong>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
