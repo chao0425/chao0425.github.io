@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型再探</title>
+    <link rel="stylesheet" href="boxPro.css">
+</head>
+<body>
+    <h1>这节主要是说盒子模型中的margin、padding、border等内容</h1>
+    <div class="outline">
+        是绘制于元素周围的一条线，位于边框边缘的外围（border与margin之间，border的外围），可起到突出元素的作用。
+        <br>
+        值得注意的是，outline与border是不同的，因为outline是不占用空间的。
+        <br><strong>我这里让outline的宽度为40px，覆盖了h1标题的一部分内容，主要是想表达：outline不占用空间，不会像border一样，使得文字被挤下去。
+        </strong>
+    </div>
+    <div class="margin">
+        这个略微覆盖的效果还是上面的哪个outline的效果，只是表面覆盖，而非占用空间。
+        <br>
+        这个是可以设置外边框的，上下左右都可以设置，也可以默认四个方向的宽度都是一样。比如这段div的margin的配置就是下面的这个配置<br>
+        margin-left: 50px;<br>
+        margin-top: 28px;<br>
+        margin-bottom: 60px;(这个主要是影响下面)<br>
+    </div>
+    <div class="padding" style="border: 1px solid black;">
+        接下来说填充（padding），填充的部分是border与content之间的部分，是透明的，也比较简单。为了直观起见，我们这次顺手给使用一个border。<br>
+        padding-left: 30px;<br>
+        padding-top: 5px;<br>
+        padding-bottom: 1px;<br>
+        配置如上，很简单的。<br>
+        <strong>题外话，padding:25px 50px 75px 100px;这个是css支持的写法，不过根据我的猜测蛤，实际应用肯定是不用的，毕竟这是降低了可读性。如果我们明确的说出来了left、top很显然的，而这样一行写出来，还得记忆哪个是左padding，哪个是右padding。</strong>
+    </div>
+
+    <div class="border">
+        最后我们再来说说border。也是比较简单的。<br>
+        配置如下：<br>
+    margin-top: 30px;<br>
+    margin-bottom: 300px;<br>
+<br>
+    border-left-style: solid;<br>
+    border-left-color: aqua;<br>
+    border-left-width: 5px;<br>
+<br>
+    border-right-style: double;<br>
+    border-right-color: black;<br>
+    border-right-width: 7px;<br>
+<br>
+    border-top-style: dotted;<br>
+    border-top-color: red;<br>
+    border-top-width: 3px;<br>
+<br>    
+    border-bottom-style: dashed;<br>
+    border-bottom-color: gray;<br>
+    border-bottom-width: 3px;<br>
+<br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+body {
+    color: gray;
+    background-color: #fffaf0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+strong {
+    color: red;
+}
+
+.outline {
+    outline: gray solid 40px;
+}
+
+.margin {
+    margin-left: 50px;
+    margin-top: 28px;
+    margin-bottom: 60px; /*这个是影响接下来的片段的*/
+}
+
+.padding {
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+
+.border {
+    margin-top: 30px;
+    margin-bottom: 300px;
+
+    border-left-style: solid;
+    border-left-color: aqua;
+    border-left-width: 5px;
+
+    border-right-style: double;
+    border-right-color: black;
+    border-right-width: 7px;
+
+    border-top-style: dotted;
+    border-top-color: red;
+    border-top-width: 3px;
+    
+    border-bottom-style: dashed;
+    border-bottom-color: gray;
+    border-bottom-width: 3px;
+
+}
