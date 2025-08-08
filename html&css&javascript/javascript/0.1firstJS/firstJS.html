@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1个使用js的html</title>
+    <link rel="stylesheet" href="firstJS.css">
+    <script src="firstJS.js"></script>
+
+</head>
+<body>
+    <div style="text-align: center;">
+        <button class="btn1" onclick="action()" title="这个按钮涉及js了">试着单击一下这个按钮</button>
+    </div>
+
+    <div>
+        我们这节主要解决：<br>
+        1.如何声明js函数<br>
+        2.如何js函数行为与html结合<br>
+        <br>
+        对于声明：function name() {} 就可以了<br>
+        对于js函数行为与html的结合，我还是感觉应该单独写js文件，尽管它可以内嵌使用。<br>
+        写好js文件后，在script标签给一个属性src，值为文件路径。就可以了。<br>
+        我们以bottom按钮为例，设置按钮的时候，属性为onclick(单击生效)，属性为函数名字。<br>
+    </div>
+
+    <strong style="color: red">script标签的话，有src属性就不可以有内容(任何内容，包括空格、换行(对于空格、换行没有纯粹是为了安全起见))，有内容则没有属性。</strong>
+
+</body>
+</html>

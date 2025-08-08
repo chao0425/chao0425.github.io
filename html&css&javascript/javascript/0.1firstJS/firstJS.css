@@ -1,0 +1,14 @@
+body {
+    background-color: #fffaf0;
+    color: gray;
+    font-size: 20px;
+}
+
+.btn1 {
+    background-color: white;
+    color: gray;
+    height: 61.8px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
