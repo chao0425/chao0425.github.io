@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow溢出</title>
+    <link rel="stylesheet" href="overflow.css">
+</head>
+<body>
+    <h1>当文字量超出块儿的最大容量，文字会溢出，我们这一节来解决一下</h1>
+
+    <div>
+        <p>
+            先来一个溢出的例子。
+        </p>
+    </div>
+
+    <div class="overflow" style="float: left;">
+        <p style="margin: 0px; padding: 0px;">
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+        </p>
+    </div>
+
+    <div style="float: left;">
+        <p>
+            可以看到文字是溢出来了。我们接下来通过css来解决溢出的问题。<br>
+            首先这个css属性为overflow <br>
+            默认情况是：overflow: visible;但是会出现溢出的情况<br>
+            接下来看看hidden会如何<br>
+        </p>
+    </div>
+
+    <div class="overflow" style="float: left; overflow: hidden;">
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+    </div>
+    <div style="float: left;">
+        <p>
+            发现如果overflow: hidden;<br>
+            那么溢出的部分则不会展示。<br>
+        </p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <p>
+        由于溢出部分很恶心人(遮挡文字)，所以我用了几个br换行 <br>
+        我没有清除浮动，只是一堆br标签，把浮动部分绕出去了。。。
+    </p>
+    <div class="overflow" style="overflow: auto; float: left;">
+        <p style="margin: 0px;">
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+        </p>
+    </div>
+    <div style="float: left;">
+        <p>
+            如果我们使用overflow: auto;<br>
+            当可能出现溢出的时候，自动加上了滚动条。这样就不会造成溢出。
+        </p>
+    </div>
+
+    <div class="overflow" style="float: left; overflow: scroll;">
+        <p style="margin: 0px;">
+            
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+            为了溢出，所以我这里就随便说点什么<br>
+        </p>
+    </div>
+
+    <div style="float: left;">
+        <p>
+            这个对于overflow: scroll;<br>
+            那么溢出时候也是有滚动条<br>
+            不过这个需不需要滚动条的时候他都存在占用空间<br>
+            综合来讲，auto更好用一些。
+        </p>
+    </div>
+</body>
+</html>
