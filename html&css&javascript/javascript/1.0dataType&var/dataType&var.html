@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型与变量</title>
+    <link rel="stylesheet" href="dataType&var.css">
+    <script src="dataType&var.js"></script>
+</head>
+<body>
+    <div>
+        js中的变量声明使用的是var(弱类型语言)<br>
+        js中是不需要使用";"分号的<br>
+    </div>
+
+    <div>
+        js中我们想要打印可以使用：console.log()，值得注意的是，打印结果我们要f12在浏览器的控制台才能看到<br>
+    </div>
+
+    <div>
+        <p>
+            js中常见的类型有：数值类型、字符串类型、布尔类型、引用类型（Object）、函数类型（function类型）<br>
+            逆天的js如果var声明变量，直接写一下举例吧<br>
+            <code>
+                var string = "string"<br>
+                string = "we can change"<br>
+                string = 666<br>
+            </code>
+            这样的话一点毛病没有，从一开始的字符串类型变为了数值类型...<br>
+            甚至一个变量可以重复声明，即前面<br>
+            <code>
+                var name = "666"<br>
+                接下来直接：<br>
+                var name = 666 也没毛病<br>
+            </code>
+            对于我们想知道某个变量什么类型，可以用typeof<br>
+            刚刚发现可以<code>console.log(typeof "String")</code>
+            也可以<code>console.log(typeof("String"))</code>
+            如果声明没有赋值，就是undefined，输出、类型都是undefined <br>
+            如果赋值null了，值就是null，类型是object了。<br>
+            至于命名风格等，可以参照Java。
+        </p>
+    </div>
+</body>
+</html>
