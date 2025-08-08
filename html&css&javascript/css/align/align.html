@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ailgn对齐</title>
+    <link rel="stylesheet" href="align.css">
+</head>
+<body>
+    <h1>简单聊聊align对齐，以前用到的比较多的就是center居中对齐</h1>
+
+    <div style="text-align: center;">
+        <p>
+            尝试一下居中对齐
+        </p>
+    </div>
+
+    <div style="margin: auto; width: 50%; background-color:#FAF9F6; border: 1px solid black;">
+            <p style="color: #333333;">
+                我们发现对于div，如果设置了width(非100%)，并且margin为auto的话，他是自动居中对齐的。<br>
+                事实上，这个居中对齐是通过设置的margin来使得左右两边的空隙而实现的。<br>
+                若我们希望的是：文本居中对齐，div无所谓的话，可以使用text-align<br>
+                如一开始展示的那样。
+            </p>
+    </div>
+
+    <div style="margin: 10px; background-color:#FAF9F6; color: #333333; text-align: center; border: 1px solid black;">
+            <p>
+                ok，如果是text-align: center;的话<br>
+                就有了仅仅文本居中对齐的效果。
+            </p>
+    </div>
+
+    <div style="margin: 10px; background-color:#FAF9F6; color: #333333; text-align: center; border: 1px solid black; padding-top: 10px;padding-bottom: 10px;">
+            <p>
+                我们可以使用padding <br>
+                从而达到上下居中的效果。<br>
+                （padding-top和padding-bottom相同即可）
+            </p>
+    </div>
+
+    <div style="margin: 10px; background-color:#FAF9F6; color: #333333; text-align: center; border: 1px solid black;">
+        <img src="../../image/justImage.jpg" alt="图片暂时无法加载" style="width: 90px; height: 160px;">
+    </div>
+
+    <div style="margin: auto; padding: 10px; width: 90px; background-color:#FAF9F6; color: #333333; text-align: center; border: 1px solid black;">
+        <img src="../../image/justImage.jpg" alt="图片暂时无法加载" style="width: 90px; height: 160px;">
+    </div>
+
+    <div>
+        <p>
+            总之是可以有对齐方式的。<br>
+            无论是利用div的整体居中、还是text-align使得其在div中居中。
+        </p>
+    </div>
+
+
+    <div>
+        <p style="line-height: 40px; border: 1px solid black;">
+            接下来说一下line-height，这个就是设置行间距的<br>
+            <strong>这我就有话说了<br>
+                如果用px的话，他是小于等于字体大小的，比如我这里20px的字体大小，如果设置30px无效（<span style="color: red;">不知道为什么，现在这是40px发现他生效了，不知道为啥。</span>）<br>
+                不过设置5px他就可以重叠在一起。但是可以直接阿拉伯数字，变为当前字体的多少倍大小。<br>
+                也可以使用百分比，以当前字体大小为100%</strong>
+        </p>
+    </div>
+
+    <div style="text-align: center;">
+        <p>
+            <strong style="color: red;">
+                对于transform我就不去了解了，以后再说。<br>
+                我们对于文字、图片的居中，可以依靠margin配合块居中，也可以使用text-align的文字居中，当然，也可以依靠我们之前说的position来居中。都可以。<br>
+                我们可以使用line-height来调节行间距。<br>
+            </strong>
+        </p>
+    </div>
+
+</body>
+</html>
