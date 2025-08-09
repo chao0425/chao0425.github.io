@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator运算符</title>
+    <link rel="stylesheet" href="operator.css">
+    <script src="./operator.js"></script>
+</head>
+
+<body>
+    <h1></h1>
+    <div>
+        <p>
+            运算符主要是：算数、符合算数、关系、逻辑、条件、位运算。
+        </p>
+    </div>
+    <div>
+        <p>
+            我们发现对于除法：<br>
+            console.log(10/4); 输出2.5 <br>
+            console.log(10/2); 输出5 <br>
+            console.log(10/0); 输出Infinity <br>
+            console.log(10%2); 输出NaN(not a number) <br>
+            <br>
+            继续，注意对于 /= 或者 %= 这种，要注意他的含义是左边对右边操作后、将结果赋值给左边。<br>
+            对于 /= 0 或者 %= 0 结果同/0或%0 <br>
+            var i = 10;<br>
+            console.log(i /= 4);2.5<br>
+            console.log(i /= 2);1.25<br>
+            console.log(i /=0);Infinity<br>
+            console.log(i %= 0);NaN<br>
+            <br>
+            继续 <br>
+            console.log(1 == 1);true <br>
+            console.log(1 == "1");true<br>
+            console.log("1" == "1");true<br>
+            console.log(1 == true);true<br>
+            console.log(2 == true);false<br>
+<br>
+            <strong>我们可以发现，对于“==”的应用是，左右类型相同的话，则正常比较，如果类型不同，则都转化为数字再判断。同时，我们发现，true在js中好像是等于数值1的，而false数值等于0，对于“===”则是如果类型不同直接false，如果类型相同再比较。这里就不贴例子了，但是js里面写了。</strong>
+
+            <br>
+            对于条件运算符，逻辑运算符，位运算和Java是一样的。
+        </p>
+    </div>
+</body>
+
+</html>
