@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controlProcess控制流程</title>
+    <style>
+        body {
+            background-color: #fffaf0;
+            color: gray;
+            font-size: 24px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: black;
+            text-align: center;
+        }
+
+        strong {
+            color: black;
+        }
+    </style>
+    <script src="./controlProcess.js"></script>
+</head>
+
+<body>
+    <h1>接下来说一下控制流程</h1>
+    <h2>1.分支</h2>
+    <h3>(1).if</h3>
+    <code>
+        var month = 10;<br>
+<br>
+        if (month <= 6) {<br>
+            console.log("月份<=6")<br>
+        else {<br>
+            console.log("月份>6")<br>
+        }<br>
+    </code>
+
+    这样的话，就可以在f12的控制台打印出来“月份&gt;6”了<br>
+    <strong>对于js，如果使用var month = prompt("请输入一个数字");是将输入的值赋值给month，prompt是弹出一个弹框，让我们来输入。返回类型为string</strong><br>
+    <strong>由于弹框比较恶心，所以我注释掉了，如果需要，到js文件里面取消注释就好。</strong><br>
+    var mon = Number.parseInt(month)，这个方法是将字符串转化为number类型，注意他不是改变原始值，而是返回新值，我们要赋值的。
+    <br>
+    if如果是判断非空字符串、非空对象、非0数字、非null，那么判定为true
+    <h3>(2).switch</h3>
+
+    与Java基本是一样的
+
+    <h2>2.循环</h2>
+
+    直接打印一个九九乘法表上来当例子吧。<br>
+
+    <script>
+        for (var line = 1; line <= 9; line++) {
+            for (var column = 1; column <= line; column++) {
+                document.write(line + " * " + column + " = " + line * column + "&emsp;")
+            }
+            document.write("<hr>")
+        }
+    </script>
+
+    <br>
+    <code>
+        for (var line = 1; line <= 9; line++) {<br>
+&emsp;            for (var column = 1; column <= line; column++) {<br>
+&emsp;&emsp;                document.write(line + " * " + column + " = " + line * column + "&emsp;")<br>
+&emsp;            }<br>
+&emsp;            document.write("&lt;hr&gt;")<br>
+        }<br>
+    </code>
+    控制流程也很简单，没啥复杂的。<br>
+    我们用的是for循环来作为例子，如果使用while循环也是同理的。<br>
+    值得说明的就是：<br>
+    1.打印到界面需要使用document.write() <br>
+    2.注意一下打印时候的换行怎么操作、空格怎么操作<br>
+    3.刚刚发现hr的效果是前后都自动加了br的，这是html的内容哈哈哈<br>
+
+    <br>接下来看看for each循环。
+    <br>for each之前，先说如何定义数组
+    <br>直接var arr = [2,4,6,8,10]就ok的。
+    <br><br><br>
+    <script>
+        var arr = [2,4,6,8,10];
+        for (var index = 0; index < arr.length; index++) {
+            document.write(2 * arr[index] + " ");
+        }
+        document.write("<br>")
+        for (var ele in arr) {
+            document.write(2 * ele + " ")
+        }
+    </script>
+<br>    代码如下，也是比较简单的。<br>
+    <code>
+        <br>
+        var arr = [2,4,6,8,10];<br>
+        for (var index = 0; index < arr.length; index++) {<br>
+&emsp;            document.write(2 * arr[index] + " ");<br>
+        }<br>
+        document.write("&lt;br&gt;") <br>
+        for (var ele in arr) {<br>
+&emsp;            document.write(2 * ele + " ")<br>
+        }<br>
+    </code>
+    <strong style="color: red;">我们发现，js中的foreach是与Java不同的，更类似于python，是for(var xxx in xxx) 用的in而不是冒号。而且，我们的xxx代表的不是元素，而是索引。很恶心</strong>
+
+    <h2>3.函数</h2>
+
+    function 名字() {} <br>
+    var 名字 = function () {} <br>
+    <strong>注意，js中函数不需要加参数的类型（毕竟是弱类型语言嘛），也是没有返回值类型的。但是要非要有一个返回值，那么直接return即可。</strong><br>
+    我们举例如下<br>
+    <code>
+function sum(a, b) {<br>
+console.log(arguments) <br>
+&emsp;    return a + b;<br>
+}<br>
+var ans = sum(10,20)<br>
+console.log(ans)<br>
+<br>
+var sum_2 = function (a, b) {<br>
+console.log(arguments) <br>
+return a + b;<br>
+}<br>
+var ans = sum_2(10,20)<br>
+console.log(ans)<br>
+    </code>
+    可以按f12查看结果，发现两种的效果都挺好。<br>
+    <strong>js中，实际参数和形式参数的数量是可以不一致的，我日了，真诡异。多出来的部分相当于没传，少的话就是NaN</strong><br>
+    console.log(arguments)可以知道实际传入了怎样的参数，具体可见上述代码<br>
+
+</body>
+
+</html>
