@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>josn在客户端使用</title>
+    <title>json在客户端使用</title>
     <link rel="stylesheet" href="./json.css">
     <script src="./json.js"></script>
 </head>
 <body>
-    
+    <div>
+        <p>
+            JSON格式仅仅是一个文本。是一种字符串语法格式。<br>
+            在前后端交互的过程中，可以使用json格式来交互。<br>
+        </p>
+    </div>
+    <div>
+        <p>
+            json格式可以如下<br>
+            <code>
+                var str = '{"属性名":属性值, "属性名":属性值, ..., "属性名":{}, "属性名":[]}'<br>
+                var personStr = '{"name":"Bob", "age":23, "hobby":["eat","sleep","game"] }'<br>
+            </code>
+            <strong>注意属性名必须要双引号包裹上，对于属性值，字符串就双引号，数字就不用处理。</strong><br>
+            <code>
+                var person = JSON.parse(personStr);
+            </code>
+            <br>我们可以通过JSON.parse()将json格式的字符串转化为js的对象。<br>
+        </p>
+    </div>
 </body>
 </html>
