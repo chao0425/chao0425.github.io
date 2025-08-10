@@ -9,3 +9,7 @@ console.log(person)
 console.log(person.name)
 console.log(person.age)
 console.log(person.hobby)
+
+console.log("hobby is : " + person.hobby[0])
+
+console.log(JSON.stringify(person))
