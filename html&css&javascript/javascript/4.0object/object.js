@@ -14,7 +14,11 @@ var people = {
     "age" : 28,
     "job" : "teacher",
     sayMe : function(hobby) {
-        console.log("Hello my name is " + this.name + " and my age is " + this.age + " my job is " + this.job + "my hobby is " + hobby)
+        console.log(
+            "Hello my name is " + this.name + 
+            " and my age is " + this.age + 
+            " my job is " + this.job + 
+            "my hobby is " + hobby)
     }
 }
 
