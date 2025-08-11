@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他的一些api</title>
+    <style>
+        body {
+            color: gray;
+            background-color: #fffaf0;
+            font-size: 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: black;
+        }
+
+        strong,
+        b {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>由于懒得写多个文件了，所以html，css，js都写在这里</h1>
+    <strong>
+        css我放在头部了，为了清晰一点，script我放在底部
+    </strong>
+    <br>
+
+    <div>
+        <code>
+    var date = new Date(); <br>
+    console.log(date)<br>
+    console.log("getDate : " + date.getDate())<br>
+    console.log("getDay : " + date.getDay())<br>
+    console.log("getMonth : " + date.getMonth())<br>
+    console.log("getHours : " + date.getHours())<br>
+    console.log("getMinutes : " + date.getMinutes()) <br>
+        </code>
+        <strong>我们发现getDay()好像是得到的一星期的第几天</strong>
+        <br><strong>要注意这个month是从0开始算的，0是第一个月</strong>
+        <br>getHours()是一天的第几个小时
+        <br>getMinutes()则是一小时的第几分钟
+        <br>所以我们猜测，默认的就是：小时是一天的第几个徐爱事故，分钟时小时的第几分钟，天是星期的第几天。都是大一个度量单位。
+    </div>
+
+    <div>
+        <p>当然，除了我们get也可以set，不举例了。</p>
+    </div>
+
+    <div>
+        <code>
+console.log(Math.abs(-0.3)) <br>
+console.log(Math.pow(2,3)) <br>
+        </code>
+        <br>
+        Math的api和Java差不多，懒得举例了。<br>
+        注意一下是用Math类来调用的方法。<br>
+    </div>
+
+    <div>
+        <p>对于number类是一些基础的东西，就是判断是不是int，以及字符串和数字之间的转化</p>
+        <code>
+        var num = "10" <br>
+        console.log("parseInt ans type is : " + typeof Number.parseInt(num)) <br>
+        </code>
+    </div>
+
+    <div>
+        <p>
+            String的api基本与Java是一样的，例子就举例了。
+        </p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var date = new Date();
+    console.log(date)
+    console.log("getDate : " + date.getDate())
+    console.log("getDay : " + date.getDay())
+    console.log("getMonth : " + date.getMonth())
+    console.log("getHours : " + date.getHours())
+    console.log("getMinutes : " + date.getMinutes())
+    console.log("---------------------------------")
+    console.log(Math.abs(-0.3))
+    console.log(Math.pow(2,3))
+
+    var num = "10"
+    console.log("parseInt ans type is : " + typeof Number.parseInt(num))
+    
+</script>
