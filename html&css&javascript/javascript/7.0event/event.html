@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event事件</title>
+    <style>
+        body {
+            color: gray;
+            background-color: #fffaf0;
+            font-size: 20px;
+        }
+        strong {
+            color: black;
+        }
+        h1, h2 {
+            color: black;
+            text-align: center;
+        }
+    </style>
+    <script src="./event.js"></script>
+</head>
+<body>
+    <h1>事件</h1>
+    <strong>我们发现事件绑定的属性普遍属性名是on开头</strong>
+    <div>
+        <p>
+            事件是用户、浏览器的<strong>行为</strong>，发生一些行为时候，我们可以让js运行，称为事件的发生。当事件发生与js结合，称为事件的绑定。<br>
+            对于事件，我们主要分为三类：1.鼠标点击，2.键盘输入，3.表单事件
+        </p>
+    </div>
+    <div>
+        <p style="text-align: center;">
+            <input onclick="hello(),other()" type="button" value="单击我有奇效"><br>
+            使用了onclick绑定了js的hello()方法（双击）<br>
+            <input ondblclick="double()" type="button" value="双击我有奇效"><br>
+            使用了ondblclick绑定了js的方法（双击）
+        </p>
+
+    </div>
+    <div style="color: black;">
+        <p>
+            对于事件的绑定：<br>
+            1.可以通过html属性绑定 <br>
+                一个属性可以绑定多个函数如：onclick="hello(),other()"<br>
+                alert的弹窗是干扰我们点击效果的(单击双击同时有弹窗，那么双击永远都不会执行) <br>
+            2.通过dom动态绑定<br>
+        </p>
+    </div>
+    <div>
+        <p>鼠标事件、键盘事件举例</p>
+        <p style="border: 1px solid black; margin-right: 600px;" onmouseover="over()" onmouseenter="enter()" onmousemove="move()" onmouseleave="leave()">
+            在这个框内，我们来展示一下鼠标的悬停、进入、离开的事件
+        </p>
+        <code>style="border: 1px solid black; margin-right: 600px;" onmouseover="over()" onmouseenter="enter()" onmousemove="move()" onmouseleave="leave()"</code><br>
+        我们例子大概到这里，接下来看看键盘事件。
+        <br><br>
+        <p>
+            接下来的就是键盘事件，为了正常使用，请打开f12时候操作<br>
+            <input type="text" onkeydown="keyDown()" onkeyup="keyUp()"><br>
+            <code>
+                input type="text" onkeydown="keyDown()" onkeyup="keyUp()"
+            </code><br>
+            代码很简单，就这样。
+        </p>
+    </div>
+</body>
+</html>
