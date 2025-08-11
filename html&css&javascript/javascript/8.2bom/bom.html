@@ -19,9 +19,32 @@
         }
     </style>
     <script src="./bom.js"></script>
-    <title>Document</title>
+    <title>window对象的常见api</title>
 </head>
 <body>
-    
+    <div>
+        <p>
+            <strong>window对象是自动创建好了，直接使用就ok的</strong><br>
+            弹窗方式的api、关于定时的api <br>
+        </p>
+    </div>
+    <div>
+        <button onclick="hello()">信息提示</button>&emsp;
+        <button onclick="typeIn()">信息输入</button>&emsp;
+        <button onclick="tryConfirm()">信息确认</button>&emsp;
+    </div>
+    <div>
+        <p>我们使用window api的话，可以不写“window.”</p>
+    </div>
+    <div>
+        接下来是setTimeOut方法的举例，具体看js文件<br>
+        <button onclick="sleepTime()">点击后，输入一个数字(单位为秒)，输入时间过后，打印hello</button>
+    </div>
+    <div>
+        <p>
+            还是那句话，api是无涯的，我们贴一个中文菜鸟教程的文档<br>
+            <a href="https://www.runoob.com/jsref/obj-window.html">菜鸟window对象 api的文档</a>
+        </p>
+    </div>
 </body>
 </html>
