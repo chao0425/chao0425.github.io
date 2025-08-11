@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组api</title>
+    <link rel="stylesheet" href="arrApi.css">
+    <script src="./arrApi.js"></script>
+</head>
+<body>
+    <div>
+        <p>
+            写在开头——api是无涯的<br>
+            <a href="https://www.runoob.com/jsref/jsref-obj-array.html" target="_blank">通向菜鸟教程的中文api文档</a>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            先简单的看一下数组的声明以及使用<br>
+        </p>
+        <code>
+var arr = new Array();<br>
+console.log("length is : " + arr.length + " and arr is : " + arr);<br>
+arr[0] = "Bob"<br>
+arr[1] = 0 <br>
+arr[4] = true<br>
+console.log("length is : " + arr.length + " and arr is : " + arr);<br>
+<br>
+var arr = new Array(5);<br>
+console.log("length is : " + arr.length + " and arr is : " + arr);<br>
+<br>
+var arr = new Array(2,4,6,8);<br>
+console.log("length is : " + arr.length + " and arr is : " + arr);<br>
+<br>
+var arr = [1, 3, "好奇怪", true, 7, 9]<br>
+console.log("length is : " + arr.length + " and arr is : " + arr);<br>
+        </code>
+    </div>
+    <div>
+        <p>
+            <strong>
+                我们发现，js的数组更类似Java的集合框架，而且比集合框架还要更开放一些。<br>
+                1.数组的长度自由设置
+                2.数组的元素内容随意设置
+            </strong>
+        </p>
+    </div>
+
+    <div>
+        <code>
+var people = ["Bob", "Eric", "Alice", "Jenn"]<br>
+<br>
+var animal = ["Dog", "Cat", "Pig"]<br>
+console.log(people.concat(animal))<br>
+<br>
+console.log(people.pop()) <br>
+console.log(people) <br>
+<br>
+console.log(people.push("Steve")) <br>
+console.log(people) <br>
+console.log(people.indexOf("Jenn")) // 我们已经将Jenn删除了，所以返回-1<br>
+<br>
+var ans = people.reverse()<br>
+console.log(ans)<br>
+console.log(people)<br>
+<br>
+console.log(people.join(" && "))<br>
+<br>
+console.log(people.slice(0,2)) <br>
+<br>
+var arr = [0,1,2,3,4,5,6];<br>
+// 元素就是索引方便我们展示插入删除、我们插入元素均为字符串<br>
+console.log(arr.splice(2,2,"第一个插入的元素","第二个插入的元素","第三个插入的元素"))<br>
+console.log(arr)<br>
+        </code>
+        发现concat可以将两个数组合并，返回一个新的数组，不改变原数组<br>
+        pop方法的话就是移除最后一个元素，并返回这个元素<br>
+        push方法是从末尾加一个元素，并且返回这个长度。<br>
+        indexOf方法类似于Java，有从前找，从后找。找不到的话则是返回-1 <br>
+        <strong>我们发现，如果运用reverse的话，是修改了原数组的，并且返回的结果是修改后的数组</strong><br>
+        使用join方法就是将数组转化为字符串，里面的参数则是指定分隔符，默认是逗号。<br>
+        我们发现slice方法截取的是左闭右开，同Java <br>
+        最后就是splice方法了，他是删除且添加。我们来详细说说是咋回事。<br>
+        splice(index,num,xxx,xxx,xxx) <br>
+        语法格式大概如上，index是指的我们从index为多少开始操作，num表示删除多少个元素，xxx为添加的元素。<br>
+        num删除个数从arr[index]开始算的第一个元素，添加的元素的第一个占用arr[index]的位置。<br>
+        返回值是由被删除的元素组成的数组<br>
+    </div>
+    <div>
+        <p>
+            <strong>api的海是无涯的，只能说是学习一些，更多的是去查阅，尝试</strong><br>
+        </p>
+    </div>
+</body>
+</html>

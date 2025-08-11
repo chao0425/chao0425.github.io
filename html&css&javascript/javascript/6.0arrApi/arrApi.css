@@ -1,0 +1,13 @@
+body {
+    color: gray;
+    background-color: #fffaf0;
+    font-size: 20px;
+}
+
+h1,h2 {
+    text-align: center;
+    color: black;
+}
+strong,b {
+    color: black;
+}
