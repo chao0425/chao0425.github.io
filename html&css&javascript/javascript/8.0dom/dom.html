@@ -17,11 +17,71 @@
         strong {
             color: black;
         }
+
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            margin: auto;
+        }
     </style>
     <script src="./dom.js"></script>
-    <title>Document</title>
+    <title>dom编程——事件绑定</title>
 </head>
 <body>
-    
+    <div>
+        <button id="btn1">按钮</button>
+        <!-- <script>
+            var btn = document.getElementById("btn1");
+            btn.onclick = function() {
+                alert("单击出的结果")
+            }
+        </script> -->
+        <br>
+        对于dom的绑定，给元素一个id，然后script里面通过document.getElementById()来得到对象，给对象绑定事件就好了。<br>
+        对于dom编程的函数变量，我们是不需要给左边的变量加括号的<br>
+        <br><strong>接下来聊一下界面加载事件</strong>onload <br>
+        onload事件是body加载完毕后执行的。他放在body标签里面。<br>
+        当然，我们也可以window.onload = function() {dom编程的东西}，这样body里面就不写onload了，具体详见我js的代码。<br>
+        <strong>关于dom编程与事件绑定，我们可以直接绑定(html里面注释掉了，在上方很近的距离，还有就是js里面注释掉的，以及js里面正在用的。)</strong><br>
+    </div>
+
+    <div class="div1" id="d1">
+
+    </div>
+    <hr>
+    接下来说说var变量以及函数调用。<br>
+    <code>
+console.log(wow) <br>
+var wow = "wow" <br>
+    </code>
+    我在js里面的开头写了这个，结果是undefined <br>
+    不过我们来看接下来这段代码，这段代码是可以正常运行的<br>
+    <code style="font-size: 18px;">
+
+window.onload = function ready() {<br>&emsp;
+    var btn1 = document.getElementById("btn1")<br>&emsp;
+    btn1.onclick = function() {<br>&emsp;&emsp;
+        alert("单击的结果")<br>&emsp;&emsp;
+        d1.onclick() // <strong style="color: red;">单击后触发了d1.onclick()，所以我们去找onclick() P.S. 这类似与Java，调用一个函数的话，找对应的函数就好了。
+        </strong><br>&emsp;
+    }
+<br>&emsp;
+    var d1 = document.getElementById("d1")
+    <br>&emsp;
+    d1.onclick = function() {<br>&emsp;&emsp;
+        indexD1++; // <strong style="color: red;">我们发现这时候indexD1已经是正常的了，恶心的是，d1不可以放在这个函数的底下，但是indexD1却可以，很奇怪。出于我并不需要完全弄懂为什么，什么var的机制什么的，因此不深究。不过：如果对于var这种东西，我们需要使用的话，一律放在最开头，这样最稳妥了</strong><br>&emsp;&emsp;
+        console.log(indexD1)<br>&emsp;&emsp;
+        if(indexD1 % 3 == 1) {<br>&emsp;&emsp;&emsp;
+            d1.style.backgroundColor= "red"<br>&emsp;&emsp;
+        } else if (indexD1 % 3 == 2) {<br>&emsp;&emsp;&emsp;
+            d1.style.backgroundColor= "green"<br>&emsp;&emsp;
+        } else {<br>&emsp;&emsp;&emsp;
+            d1.style.backgroundColor= "black"<br>&emsp;&emsp;
+        }<br>&emsp;
+    }<br>&emsp;
+    <strong style="color: red;">var indexD1 = 0;<br></strong>
+}<br>
+    </code>
 </body>
 </html>
