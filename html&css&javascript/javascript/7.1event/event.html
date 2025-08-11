@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event表单事件</title>
+    <style>
+        body {
+            color: gray;
+            background-color: #fffaf0;
+            font-size: 25px;
+        }
+        strong {
+            color: black;
+        }
+        h1, h2 {
+            color: black;
+            text-align: center;
+            font-size: 35px;
+        }
+    </style>
+    <script src="./event.js"></script>
+</head>
+<body>
+    <h1>讲讲关于表单的事件</h1>
+    <div style="text-align: center;">
+        <form action="../index.html" method="get" onsubmit="testSub()" onreset="return testReset()">
+            <label for="account">账号:</label>
+            <input type="text" id="account" name="account" style="width: 200px; height: 25px; font-size: 20px;"  onfocus="testFocus()" onblur="testBlur()" onchange="testChange(this.value)">
+            <br>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" style="width: 200px; height: 25px; font-size: 20px;">
+            <br>
+            <select name="location" id="location" onfocus="testFocus()" onblur="testBlur()" onchange="testChange_2(this.value)">
+                <option value="ShangHai">上海</option>
+                <option value="BeiJing">北京</option>
+                <option value="HangZhou">杭州</option>
+            </select>
+            &emsp;<input type="submit" value="登录">&emsp;&emsp;
+            <input type="reset" value="清空">
+        </form>
+    </div>
+    <div>
+        <p>
+            onfocus:获得焦点事件<br>
+            onchange:内容改变事件(<strong>内容改变</strong>且<strong>失去焦点</strong>才会触发)<br>
+            onblur:失去焦点事件<br>
+            <strong>我们发现，对于选项发生改变不需要失去焦点就可以触发，可是如果是text文本输入框，则需要失去焦点才可能触发onchange</strong>
+            对于文本框，使用onchange="testChange(this.value)this.value则是改变后的结果，同样的，选项也可以这样操作，上面代码写了。<br>
+            我们再看看表单提交事件：onsubmit(上述的事件绑定给了某个form里面的小内容，而onsubmit是绑定的表单，而非按钮)<br>
+            event.preventDefault();可以阻止组件的默认行为的发生<br>
+            我们之前用过alert、prompt来弹出窗口，alert是提示作用，prompt是输入作用，而confirm是确认作用，如果点击“是”，返回true，否则返回false。(具体可以看看我这里js的testSub()方法是怎么写的) <br>
+            对于提交表单，我们可以用刚刚说的，也就是我的写法来处理，也可以通过confirm的结果来返回true或者false，然后“onsubmit="return testSub()"”就可以了，注意这里加了return，是返回给浏览器，告诉浏览器是继续执行还是取消了。<br>
+            对于onreset绑定也是给form的。<br>
+            我这次的reset的事件是否发生使用的是return的用例。<br>
+        </p>
+    </div>
+</body>
+</html>
