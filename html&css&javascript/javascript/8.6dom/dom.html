@@ -17,11 +17,57 @@
         strong {
             color: black;
         }
+        input {
+            font-size: 20px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: auto;
+        }
     </style>
-    <script src="./bom.js"></script>
-    <title>Document</title>
+    <script src="./dom.js"></script>
+    <title>DOM编程——操作元素_1</title>
 </head>
 <body>
-    
+    <h1>操作元素：操作属性、操作样式、操作文本<br></h1>
+    <div>
+        <input id="fInput" type="text">
+        &emsp;<input onclick="iChange()" type="button" value="点击输入希望填入什么&&输入的字体颜色改为什么颜色">
+        <br>
+        我们发现：<br>
+        操作属性直接：“元素.属性=结果”就可以了<br>
+        操作样式需要：“元素.style.驼峰命名的样式名=结果”<br>
+        <br>
+        操作属性、样式js代码如下，很简单<br>
+        <code>
+function iChange() {<br>&emsp;
+    var ele = document.getElementById("fInput")<br>&emsp;
+    ele.value = prompt("请输入你希望填入的结果")<br>&emsp;
+    // alert("type is : " + ele.type + "          and id is : " + ele.id + "          and new value is : " + ele.value)<br>&emsp;
+    // 每次弹窗很烦，所以就关了，但是展示一下是有可以直接获得属性这个功能的<br>&emsp;
+    console.log(("type is : " + ele.type + "          and id is : " + ele.id + "          and new value is : " + ele.value)) <br>&emsp;
+    ele.style.backgroundColor = "lightgray"<br>&emsp;
+    ele.style.color = prompt("请输入你希望字体改变的结果颜色(英文全小写输入):")<br>
+}<br>
+        </code>
+    </div>
+    <hr>
+    接下来是操作文本<br>
+    <input onclick="cChange()" type="button" value="点击我修改下方方框中的文本，至于方框在哪，你先别管，修改完后你就知道了">
+    <div id="fContent">
+        好的，看看能不能把这部分文本改变了
+    </div>
+    js代码如下：<br>
+    <code>
+function cChange() {<br>&emsp;
+    var ele = document.getElementById("fContent");<br>&emsp;
+    ele.innerText = prompt("你希望将这段文本改为什么") // <strong>我想说的重点是这个属性，即innerText，可以达到操作文本的效果</strong><br>&emsp;
+    // ele.innerHTML = "<br><strong>如果使用innerHTML可以识别html标签，但是innerText则不可以的</strong><br>"<br>&emsp;
+    ele.style.border = "2px solid black"<br>&emsp;
+    ele.style.marginLeft = "50px"<br>&emsp;
+    ele.style.marginRight = "50px"<br>&emsp;
+    ele.style.marginTop = "10px"<br>
+}        
+    </code>
 </body>
 </html>
