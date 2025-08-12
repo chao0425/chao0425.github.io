@@ -17,11 +17,103 @@
         strong {
             color: black;
         }
+        input {
+            font-size: 20px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     </style>
-    <script src="./bom.js"></script>
-    <title>Document</title>
+    <script src="./dom.js"></script>
+    <title>DOM编程——获得元素</title>
 </head>
 <body>
-    
+    <p>
+        对于dom编程，我们三步操作：<br>
+        1.获得dom树：window.document<br>
+
+        2.获得元素：直接获取、间接获取(<br>
+            直接获取：getElementById，返回一个对象。getElementsByTagName，得到一组元素。getElementsByName，根据name属性值得到一组元素。还可以根据class获得... <br>
+            简介获取：由父元素得到子元素，由子元素得到父元素，还有就是得到兄弟元素，我们下面写个div来举例子)<br>
+        <strong>注意获取元素时候的属性调用以及方法调用都是要由Element字样的，对于get直接获取是方法，要有参数，而父子兄弟都是方法，没有参数、没有括号。文章最后，我会贴一下js的代码，至于html的代码很简单，就是input的属性为button，然后有一些name、id属性</strong><br>
+        3.操作元素：操作属性、操作样式、操作文本、增删元素<br>
+        <hr>
+    </p>
+    <div id="father">
+        <div class="test" id="fChild">
+            获得的结果通过f12的控制台查看<br>
+            <input onclick="getElement_ById()" type="button" value="通过id获取元素" id="fButton" name="button">&emsp;&emsp;&emsp;
+
+            <input onclick="getElement_ByTag()" type="button" value="通过标签名获取一组元素" name="button">&emsp;&emsp;
+        </div>
+        <div id = "sChild">
+            <input onclick="getElement_ByName()" type="button" value="根据name属性获取一组元素" name="button">&emsp;&emsp;&emsp;
+            <input onclick="getElement_ByClass()" class="test" type="button" value="根据类名获取一组元素">&emsp;&emsp;
+        </div>
+        <div id ="tChild">
+            <input onclick="fatherGetChildren()" type="button" value="根据father元素获得children元素">&emsp;
+            <input onclick="ChildrenGetFather()" type="button" value="根据children元素获得father元素">&emsp;
+            <input onclick="getBrother()" type="button" value="获得兄弟元素">&emsp;&emsp;
+        </div>
+    </div>
+
+    <div>
+        <code><br>
+function getElement_ById() {<br>&emsp;
+    var ele = document.getElementById("fButton")<br>&emsp;
+    alert("F12打开控制台观看")<br>&emsp;
+    console.log(ele)<br>
+}<br>
+<br>
+function getElement_ByTag() {<br>&emsp;
+    var ele = document.getElementsByTagName("input")<br>&emsp;
+    alert("F12打开控制台观看")<br>&emsp;
+    for(var i = 0; i &lt; ele.length; i++) {<br>&emsp;&emsp;
+        console.log(ele[i])<br>&emsp;
+    }<br>
+}<br>
+<br>
+function getElement_ByName() {<br>&emsp;
+    var ele = document.getElementsByName("button")<br>&emsp;
+    for(var i = 0; i &lt; ele.length; i++) {<br>&emsp;&emsp;
+        console.log(ele[i])<br>&emsp;
+    }<br>
+}<br>
+<br>
+function getElement_ByClass() {<br>&emsp;
+    var ele = document.getElementsByClassName("test")<br>&emsp;
+    for(var i = 0; i &lt; ele.length; i++) {<br>&emsp;&emsp;
+        console.log(ele[i])<br>&emsp;
+    }<br>
+}<br>
+<br>
+function fatherGetChildren() {<br>&emsp;
+    var ele = document.getElementById("tChild");<br>&emsp;
+    var childrens = ele.children // 注意这是属性，没有括号。获取全部的子元素  <br>&emsp;
+    for(var i = 0; i &lt; childrens.length; i++) {<br>&emsp;&emsp;
+        console.log(childrens[i])<br>&emsp;
+    }<br>&emsp;
+    console.log("-----------------")<br>&emsp;
+    var children_1 = ele.firstElementChild; // 注意这是属性<br>&emsp;
+    console.log(children_1)<br>&emsp;
+    var children_2 = ele.lastElementChild; // 注意这是属性<br>&emsp;
+    console.log(children_2)<br>
+}<br>
+<br>
+function ChildrenGetFather() {<br>&emsp;
+    var ele = document.getElementById("fButton");<br>&emsp;
+    var father = ele.parentElement; // 注意这也是属性<br>&emsp;
+    console.log(father)<br>
+}<br>
+<br>
+function getBrother() {<br>&emsp;
+    var ele = document.getElementById("sChild");<br>&emsp;
+    var brotherFront = ele.previousElementSibling; // 注意这也是属性<br>&emsp;
+    console.log(brotherFront)<br>&emsp;
+    var brotherNext = ele.nextElementSibling; // 注意这也是属性<br>&emsp;
+    console.log(brotherNext)<br>
+}            <br>
+        </code>
+    </div>
 </body>
 </html>
