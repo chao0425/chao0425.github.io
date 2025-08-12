@@ -19,9 +19,47 @@
         }
     </style>
     <script src="./bom.js"></script>
-    <title>Document</title>
+    <title>window对象属性</title>
 </head>
 <body>
-    
+    <h1>window对象属性</h1>
+    <div>
+        <strong>先来说说history属性</strong><br>
+        <button onclick="lastPage()">上一页</button>&emsp;&emsp;
+        <button onclick="nextPage()">下一页</button>&emsp;&emsp;
+        <a href="https://www.bing.com">跳转bing</a><br>
+        我们对于button可以绑定一个onclick事件，当鼠标触发时候，事件的函数为history.forward();，就是执行下一页。当然，history.back()是跳转上一页。<br>
+    </div>
+
+    <hr>
+
+    <div>
+        <strong>接下来是location属性</strong>
+        <br>事件函数里面写：// location.href="https://www.bing.com"<br>
+        <button onclick="target()">跳转必应</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <strong>会话数据/持久数据的存储、读取与清除</strong><br>
+        <button onclick="storeData()">存储数据</button>&emsp;&emsp;
+        <button onclick="readData()">读取数据</button>&emsp;&emsp;
+        <button onclick="clearData()">清空数据</button>&emsp;&emsp;
+        <br>
+        <code>
+    sessionStorage.setItem("keyA", "value_A") // 关闭会话后再打开就没了<br>
+    localStorage.setItem("keyB", "value_B") // 关闭会话后再打开还在<br>
+    console.log(sessionStorage.getItem("keyA")) // 读取会话数据并打印到控制台<br>
+    console.log(localStorage.getItem("keyB")) // 读取存储数据并打印到控制台<br>
+    sessionStorage.removeItem("keyA") // 同上不解释<br>
+    localStorage.removeItem("keyB") // 同上不解释<br>   
+        </code>
+    </div>
+    <hr>
+    <div>
+        还是那句话，api海是无涯的<br>
+        <a href="https://www.runoob.com/jsref/obj-window.html">贴一个菜鸟的中文文档</a>
+    </div>
 </body>
 </html>
