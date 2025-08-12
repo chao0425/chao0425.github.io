@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,64 @@
             background-color: #fffaf0;
             font-size: 25px;
         }
-        h1,h2 {
+
+        h1,
+        h2 {
             text-align: center;
             color: black;
             font-size: 35px;
         }
+
         strong {
             color: black;
         }
     </style>
-    <script src="./bom.js"></script>
-    <title>Document</title>
+    <script src="./dom.js"></script>
+    <title>Dom编程——增删元素</title>
 </head>
+
 <body>
-    
+    <h1>Dom编程——增删元素</h1>
+    先介绍几个api <br>
+    1.document.createElement("标签名")<br>
+    2.document.getElementById(创建出来的Element) // 默认放在最后<br>
+    3.父元素.insertBefore(新element, 获取的参照element) // 在某个子元素前面插入 <br>
+    4.父元素.replaceChild(新element,获取的被替换的element) // 注意这是child，children是把所有的清空，留下的全是新的<br>
+    5.document.getElementById("待删除元素的id").remove() // 我们之前的都是父节点调用添加修改子元素，而remove直接是删除自己的元素本身<br>
+    <input type="button" value="添加杭州" onclick="add()">
+    <input type="button" value="添加100个杭州" onclick="add_100()">
+    <input type="button" value="在上海前面添加天津" onclick="addTJ()">
+    <input type="button" value="用长春替换广州" onclick="changeCity()"><br>
+    <input type="button" value="删除深圳" onclick="rmCity()">
+    <input type="button" value="去城市化——清空" onclick="rmCitys()">
+     // 重复添加没解决id重复的问题。。。
+
+    <div>
+        <ul id="citys">
+            <li id="bj">北京</li>
+            <li id="sh">上海</li>
+            <li id="gz">广州</li>
+            <li id="sz">深圳</li>
+        </ul>
+        增加元素的js代码如下、替换、删除的js代码就不贴了，可以看js源码<br>
+        <code>
+function add() {<br>&emsp;
+    var city = document.createElement("li")<br>&emsp;
+    city.id = "hz"<br>&emsp;
+    city.innerText = "杭州"<br>&emsp;
+    var citys = document.getElementById("citys")<br>&emsp;
+    citys.appendChild(city)<br>
+}<br>            
+function addTJ() {<br>&emsp;
+    var tj = document.createElement("li")<br>&emsp;
+    tj.innerText = "天津"<br>&emsp;
+    tj.id = "tj"<br>&emsp;
+    var citys = document.getElementById("citys")<br>&emsp;
+    citys.insertBefore(tj, document.getElementById("sh"))<br>
+}<br>
+
+        </code>
+    </div>
 </body>
+
 </html>
