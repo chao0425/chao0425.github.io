@@ -71,6 +71,106 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-GitHub-SSH-配置与多密钥管理交流总结-听copilot用copilot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2025/06/04/GitHub-SSH-%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%A4%9A%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E4%BA%A4%E6%B5%81%E6%80%BB%E7%BB%93-%E5%90%ACcopilot%E7%94%A8copilot/" class="article-date">
+  <time class="dt-published" datetime="2025-06-04T14:47:45.000Z" itemprop="datePublished">2025-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2025/06/04/GitHub-SSH-%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%A4%9A%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E4%BA%A4%E6%B5%81%E6%80%BB%E7%BB%93-%E5%90%ACcopilot%E7%94%A8copilot/">GitHub SSH 配置与多密钥管理交流总结&amp;听copilot用copilot</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="GitHub-SSH-配置与多密钥管理交流总结"><a href="#GitHub-SSH-配置与多密钥管理交流总结" class="headerlink" title="GitHub SSH 配置与多密钥管理交流总结"></a>GitHub SSH 配置与多密钥管理交流总结</h1><h2 id="1-配置-SSH-私钥权限"><a href="#1-配置-SSH-私钥权限" class="headerlink" title="1. 配置 SSH 私钥权限"></a>1. 配置 SSH 私钥权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 600 /c/hexo/blog/123456</span><br></pre></td></tr></table></figure>
+<ul>
+<li>没有输出即为成功。</li>
+</ul>
+<hr>
+<h2 id="2-测试-SSH-连接"><a href="#2-测试-SSH-连接" class="headerlink" title="2. 测试 SSH 连接"></a>2. 测试 SSH 连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -v -T -p 443 git@ssh.github.com</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正常情况会看到：<br><code>Hi chao0425! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></li>
+</ul>
+<hr>
+<h2 id="3-SSH-未找到私钥的排查"><a href="#3-SSH-未找到私钥的排查" class="headerlink" title="3. SSH 未找到私钥的排查"></a>3. SSH 未找到私钥的排查</h2><h3 id="问题表现"><a href="#问题表现" class="headerlink" title="问题表现"></a>问题表现</h3><ul>
+<li>用 <code>-i /c/hexo/blog/123456</code> 可以连接；</li>
+<li>直接用 <code>ssh -T -p 443 git@ssh.github.com</code> 报 <code>Permission denied (publickey)</code>。</li>
+</ul>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ul>
+<li>SSH 只会自动加载 <code>~/.ssh</code> 下的默认密钥（如 id_rsa、id_ed25519），不会自动加载自定义路径的密钥，除非在 config 里指定。</li>
+</ul>
+<hr>
+<h2 id="4-正确配置-ssh-config"><a href="#4-正确配置-ssh-config" class="headerlink" title="4. 正确配置 ~/.ssh/config"></a>4. 正确配置 <code>~/.ssh/config</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com ssh.github.com</span><br><span class="line">    HostName ssh.github.com</span><br><span class="line">    User git</span><br><span class="line">    Port 443</span><br><span class="line">    IdentityFile /c/hexo/blog/123456</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Host 可以写多个名（空格分隔），这样无论用 <code>github.com</code> 还是 <code>ssh.github.com</code> 都会用指定密钥。</li>
+<li>路径大小写、斜杠要准确。</li>
+</ul>
+<hr>
+<h2 id="5-配置好-config-后的用法"><a href="#5-配置好-config-后的用法" class="headerlink" title="5. 配置好 config 后的用法"></a>5. 配置好 config 后的用法</h2><ul>
+<li><strong>以后所有 git&#x2F;ssh 命令无需再加 <code>-i</code> 参数，自动使用 config 指定的密钥。</strong></li>
+<li>只需：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh -T github.com</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">ssh -T -p 443 git@ssh.github.com</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="6-push-到哪里？如何-push？"><a href="#6-push-到哪里？如何-push？" class="headerlink" title="6. push 到哪里？如何 push？"></a>6. push 到哪里？如何 push？</h2><ul>
+<li>push 的目标由 <code>git remote -v</code> 决定，通常是 <code>origin</code>，即你 GitHub 仓库。</li>
+<li>常用命令：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line">git push origin main  <span class="comment"># 或 master</span></span><br></pre></td></tr></table></figure></li>
+<li>通常直接 <code>git push</code> 即可。</li>
+</ul>
+<hr>
+<h2 id="7-多个-SSH-密钥时，如何确定用哪一把？"><a href="#7-多个-SSH-密钥时，如何确定用哪一把？" class="headerlink" title="7. 多个 SSH 密钥时，如何确定用哪一把？"></a>7. 多个 SSH 密钥时，如何确定用哪一把？</h2><ul>
+<li><strong>有 <code>-i</code> 参数时</strong>：只用指定的那把。</li>
+<li><strong>有 <code>~/.ssh/config</code> 时</strong>：优先用 config 里为 Host 配置的 <code>IdentityFile</code>。</li>
+<li><strong>都没有时</strong>：依次尝试 <code>~/.ssh/id_rsa</code>、<code>id_ed25519</code> 等默认密钥。</li>
+<li>config 里同一个 Host 可配置多个 <code>IdentityFile</code>，SSH 会按顺序尝试。</li>
+</ul>
+<hr>
+<h2 id="8-删除不用的密钥时，config-要同步修改吗？顺序能配吗？"><a href="#8-删除不用的密钥时，config-要同步修改吗？顺序能配吗？" class="headerlink" title="8. 删除不用的密钥时，config 要同步修改吗？顺序能配吗？"></a>8. 删除不用的密钥时，config 要同步修改吗？顺序能配吗？</h2><ul>
+<li><strong>要删除不用的密钥，config 要同步修改</strong>，否则会找不到密钥导致认证失败。</li>
+<li><strong>config 可以为同一 Host 配置多把 IdentityFile</strong>，SSH 会按写入顺序依次尝试。</li>
+<li>推荐每个 Host 只配置一把密钥，保持 config 简洁。</li>
+</ul>
+<hr>
+<h2 id="9-常见排查方法"><a href="#9-常见排查方法" class="headerlink" title="9. 常见排查方法"></a>9. 常见排查方法</h2><ul>
+<li>用 <code>ssh -v ...</code> 查看详细日志，关注 <code>Offering public key:</code> 行。</li>
+<li>检查 config 的 Host 是否和 ssh 命令保持一致。</li>
+<li>路径不要错，权限不要错。</li>
+</ul>
+<hr>
+<h2 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a>10. 总结</h2><ul>
+<li>建议用 <code>~/.ssh/config</code> 管理多密钥，多账号用 Host 别名区分。</li>
+<li>config 路径、Host、User、Port、IdentityFile 都要写对。</li>
+<li>删除&#x2F;更换密钥要同步修改 config。</li>
+<li>日常操作无需再加 <code>-i</code>，直接用 git&#x2F;ssh 命令即可。</li>
+</ul>
+<hr>
+<p>如果需要更多复杂场景的配置示例，可随时补充！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chao0425.github.io/2025/06/04/GitHub-SSH-%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%A4%9A%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E4%BA%A4%E6%B5%81%E6%80%BB%E7%BB%93-%E5%90%ACcopilot%E7%94%A8copilot/" data-id="cme8eebo70001sgw1g5qg9g9z" data-title="GitHub SSH 配置与多密钥管理交流总结&amp;听copilot用copilot" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-first-hexo-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2025/06/04/first-hexo-blog/" class="article-date">
@@ -101,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://chao0425.github.io/2025/06/04/first-hexo-blog/" data-id="cme5wogvo00029sw1d7e68nmz" data-title="first hexo blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://chao0425.github.io/2025/06/04/first-hexo-blog/" data-id="cme8eebob0002sgw14odzcc4e" data-title="first hexo blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -149,6 +249,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2025/08/12/%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%8E%84%E5%AD%A6/">科学与玄学</a>
+          </li>
+        
+          <li>
             <a href="/blog/2025/08/11/%E5%AD%A4%E7%8B%AC%E2%80%94%E2%80%94%E8%87%AA%E6%88%91%E7%9A%84%E4%B8%8D%E4%B8%80%E8%87%B4/">孤独——自我的不一致</a>
           </li>
         
@@ -162,10 +266,6 @@
         
           <li>
             <a href="/blog/2025/07/31/%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E9%80%81%E5%A4%96%E5%8D%96/">关于我的送外卖</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2025/07/25/%E7%AE%B4%E8%A8%80/">箴言</a>
           </li>
         
       </ul>
