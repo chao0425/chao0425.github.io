@@ -18,10 +18,24 @@
             color: black;
         }
     </style>
-    <script src="./bom.js"></script>
-    <title>Document</title>
+    <script src="./dom.js"></script>
+    <title>DOM编程——解释</title>
 </head>
 <body>
-    
+    <div>
+        <p>
+            当我们通过http请求得到html文件后，浏览器将html文件转化为document对象存储，我们在浏览器上展示的也是document对象的元素<br>
+            如果我们希望用户操作改变展示的样式，显然不是修改html的源文件的。但是，我们可以暴露给用户一些接口，用户调用这些接口修改了document对象的一些属性。从而修改渲染效果<br>
+        </p>
+    </div>
+    <div>
+        <p>
+            对于我们html的结构来看，document的对象应该也是层级结构的，即树形结构。 <br>
+            即html节点后的head、body。而head里面有meta、title、style、script，body里面有div。div里面有p标签...大概是树结构的关系。<br>
+            我们对于document对象称为dom树<br>
+            树上的节点有：元素节点(element)、属性节点(attribute)、文字节点(text) <br>
+            所以我们对于js的dom编程一定程度上说：是修改了浏览器那里dom对象dom树的一些节点。
+        </p>
+    </div>
 </body>
 </html>
