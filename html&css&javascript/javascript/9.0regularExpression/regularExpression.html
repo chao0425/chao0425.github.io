@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script src="./regularExpression.js"></script>
+    <style>
+        body {
+            color: gray;
+            background-color: #fffaf0;
+            font-size: 25px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: black;
+            font-size: 35px;
+        }
+
+        strong {
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>正则表达式</h1>
+    <div>
+        <p>
+            正则表达式：使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式。<br>
+            即：字符串匹配
+        </p>
+    </div>
+    <div>
+        js代码举例如下，检查字符串中是否有某部分？<br>
+        <code>
+var reg = /contain/ <br>
+<br>
+var str2 = "this is con split tain the reg"<br>
+<br>
+var str = "this is contain the reg"<br>
+<br>
+console.log(reg.test(str))<br>  
+<br>
+console.log(reg.test(str2))<br>
+<br>
+<hr>
+接下来的是：检查字符串中是否有reg(从前往后只找一个返回第一个字母索引)，如果加g的话相当于是global全局查找，匹配整个字符串。<br>
+<strong>注意是str调用的，上面的test是reg调用的<br></strong>
+var reg = /el/g<br>
+<br>
+var str3 = "hello world el try tyrel?"<br>
+<br>
+console.log(str3.match(reg))<br>
+        </code>
+<hr>
+        再看看替换的用法，str调用replace方法，第一个参数是正则，第二个是匹配上的正则改为什么，g是全局，i是忽略大小写<br>
+<code>
+var reg = /o/gi <br>
+<br>
+console.log("HELLO world".replace(reg, " ans ")) <br>
+</code>
+    </div>
+    <hr>
+    <div>
+        我们用reg.test(str)检测str里有没有reg<br>
+        reg = /^s/表示要求前缀s 而/s$/要求后缀为s <br>
+        /^s$/跑起来发现不是既要开头又要结尾，而是恰好就是s，很奇怪 <br>
+        <p style="text-align: center;">
+            <button onclick="inputStr()" style="height: 45px; font-size: 20px;">请输入一串字符，若6~10位，以字母开头，且所有内容只可以包含字母和数字则弹出yep，若不是，返回fu*k</button>
+        </p>按钮的代码如下，就是/^[表示一位][表示一位]{可重复范围}$/，因此限制了长度、开头以及内容<br>
+        对于“{}”里面指定数量，如果是+表示至少一次，*则是任意次，?则是0或者1个 <br>
+        \w是数字字母下划线、\W是非单词、\d数字、\D非数字... <br>
+        暂时介绍这些，还有很多，用的话再差即可。<br>
+        <code>
+    var str = prompt("请输入") <br>
+    var reg = /^[a-z][a-zA-Z0-9]{5,9}$/<br>
+    if(reg.test(str)) {<br>
+        alert("yep")<br>
+    } else {<br>
+        alert("fu*k")<br>
+    }            <br>
+        </code>
+    </div>
+</body>
+</html>
